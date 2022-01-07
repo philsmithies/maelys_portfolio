@@ -1,10 +1,10 @@
 {
   "root": true,
   "project": {
-    "name": "Maelys Portfolio"
+    "name": "studio"
   },
   "api": {
-    "projectId": "yyr2fwcq",
+    "projectId": "oes0dl00",
     "dataset": "production"
   },
   "plugins": [
