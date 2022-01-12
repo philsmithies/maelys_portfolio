@@ -16,8 +16,8 @@ const Navbar = () => {
       <div class="flex items-center flex-shrink-0 text-white mr-6">
         <Image
           src="/daisy.png"
-          width={100}
-          height={100}
+          width={150}
+          height={150}
           className="self-end justify-self-center"
         />
         <div></div>
