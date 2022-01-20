@@ -1,13 +1,25 @@
-import Link from "next/link";
+import Image from "next/image";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const Index = () => {
   return (
     <>
-      <Navbar />
-      <div className="flex h-screen bg-pink-100">
-        <h1 className="text-red-500">Welcome to a blog!</h1>
+      <div className="bg-teal-500">
+        <Navbar />
       </div>
+
+      <div className="flex flex-col h-screen">
+        <div className="w-full h-4/6 bg-pink-600">
+          <h1 className="text-3xl pl-40 pt-40">Big Heart</h1>
+          <h1 className="text-3xl pl-20">Big Drawings</h1>
+        </div>
+        <div className="bg-black"></div>
+        {/* <div className="w-80 h-80 relative">
+          <Image src="/images/portfolio1.jpg" layout="fill" />
+        </div> */}
+      </div>
+      <Footer />
     </>
   );
 };
