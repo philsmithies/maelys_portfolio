@@ -21,11 +21,11 @@ const Navbar = () => {
           className="self-end justify-self-center"
         />
       </div>
-      <div class="space-x-8 flex items-center">
-        <a href="" className="hover:text-teal-600">
+      <div class="space-x-8 flex items-center font-serif">
+        <a href="/" className="hover:text-teal-600">
           Home
         </a>
-        <a href="" className="hover:text-teal-600">
+        <a href="/About" className="hover:text-teal-600">
           About Me
         </a>
         <a href="" className="hover:text-teal-600">

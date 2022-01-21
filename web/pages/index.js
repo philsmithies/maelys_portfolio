@@ -8,7 +8,7 @@ const Index = () => {
   return (
     <>
       <Head>
-        <title>Maëlys Chavernac</title>
+        <title>Maëlys Cha: Illustrator</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <div className="bg-teal-500">
@@ -16,8 +16,10 @@ const Index = () => {
       </div>
       <div className="flex flex-col">
         <div className="w-full h-screen bg-cover bg-[url('/images/portfolio8.jpg')] top-[200px]">
-          <h1 className="text-3xl pl-40 pt-40">Big Heart</h1>
-          <h1 className="text-3xl pl-20">Big Drawings</h1>
+          <h1 className="text-6xl pl-40 pt-40 font-serif text-white">
+            Big Heart
+          </h1>
+          <h1 className="text-6xl pl-20 font-serif">Big Drawings</h1>
         </div>
         <HomePageGrid />
         <div className="bg-teal-500">
