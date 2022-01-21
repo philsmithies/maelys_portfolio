@@ -3,6 +3,7 @@ import Head from "next/head";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import HomePageGrid from "../components/HomePageGrid";
+import Motion from "../components/Motion";
 
 const About = () => {
   return (
@@ -15,8 +16,9 @@ const About = () => {
         <div className="bg-teal-500">
           <Navbar />
         </div>
-
-        <h1>About</h1>
+        <div className="bg-teal-500">
+          <Motion />
+        </div>
       </div>
     </>
   );

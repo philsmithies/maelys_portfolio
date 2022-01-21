@@ -12,7 +12,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav class="container flex justify-around py-8 mx-auto bg-teal-500 w-screen">
+    <nav className="container flex justify-around py-8 mx-auto bg-teal-500 w-screen">
       <div>
         <Image
           src="/daisy.png"
