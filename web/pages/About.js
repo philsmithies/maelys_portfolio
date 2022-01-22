@@ -16,7 +16,7 @@ const About = () => {
         <div className="bg-teal-500">
           <Navbar />
         </div>
-        <div className="bg-teal-500">
+        <div className="bg-teal-500 h-4/6">
           <Motion />
         </div>
       </div>

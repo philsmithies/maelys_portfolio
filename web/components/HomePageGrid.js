@@ -1,6 +1,6 @@
 const HomePageGrid = () => {
   return (
-    <div className="bg-teal-600 h-fit flex items-center flex-col mx-auto w-full pt-10">
+    <div className="h-fit flex items-center flex-col mx-auto w-4/6 pt-10">
       <h1 className="mt-20 lg:mt-0 mb-10 lg:ml-20 text-3xl font-serif">
         My Work
       </h1>

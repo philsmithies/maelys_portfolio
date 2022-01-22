@@ -1,11 +1,12 @@
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+import HomePageGrid from "./HomePageGrid";
 
 import React from "react";
 
 const Motion = () => {
   return (
     <div className="bg-teal-500">
-      <Parallax pages={2} style={{ top: "10", left: "0" }}>
+      <Parallax pages={2} style={{ left: "0" }}>
         <ParallaxLayer
           offset={0}
           speed={2.5}
@@ -13,7 +14,6 @@ const Motion = () => {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            backgroundColor: "#ff4d6d",
           }}
         >
           <div className="flex flex-col w-full">
@@ -26,11 +26,7 @@ const Motion = () => {
           </div>
         </ParallaxLayer>
 
-        <ParallaxLayer
-          offset={1}
-          speed={2}
-          style={{ backgroundColor: "#ff6d6d" }}
-        />
+        <ParallaxLayer offset={1} speed={2} />
 
         <ParallaxLayer
           offset={1}
@@ -42,7 +38,7 @@ const Motion = () => {
             color: "white",
           }}
         >
-          <p>Scroll up</p>
+          <HomePageGrid />
         </ParallaxLayer>
       </Parallax>
     </div>
