@@ -3,6 +3,7 @@ import Head from "next/head";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import HomePageGrid from "../components/HomePageGrid";
+import ContactForm from "../components/ContactForm";
 
 const Index = () => {
   return (
@@ -21,7 +22,10 @@ const Index = () => {
           </h1>
           <h1 className="text-6xl pl-20 font-serif">Big Drawings</h1>
         </div>
-        <HomePageGrid />
+        <div className="flex flex-col items-center justify-between h-full">
+          <HomePageGrid />
+          <ContactForm />
+        </div>
         <div className="bg-teal-500">
           <Footer />
         </div>
