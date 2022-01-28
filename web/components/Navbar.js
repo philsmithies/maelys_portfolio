@@ -28,12 +28,12 @@ const Navbar = () => {
         <a href="/about" className="hover:text-teal-600">
           About Me
         </a>
-        <a href="" className="hover:text-teal-600">
+        <a href="/blog" className="hover:text-teal-600">
           Blog
         </a>
-        <a href="" className="hover:text-teal-600">
+        {/* <a href="" className="hover:text-teal-600">
           Shop
-        </a>
+        </a> */}
         <a href="/contact" className="hover:text-teal-600">
           Contact
         </a>
