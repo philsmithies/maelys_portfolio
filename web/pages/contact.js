@@ -2,6 +2,7 @@ import React from "react";
 import Head from "next/head";
 import Navbar from "../components/Navbar";
 import ContactForm from "../components/ContactForm";
+import Footer from "../components/Footer";
 
 const Contact = () => {
   return (
@@ -14,12 +15,13 @@ const Contact = () => {
         <div className="bg-teal-500">
           <Navbar />
         </div>
-        <div className="h-screen bg-slate-600 pt-10 flex flex-col items-center">
+        <div className="h-screen bg-slate-600 flex flex-col items-center justify-center">
           <div>
-            <h1 className="pb-5">Contact Me</h1>
+            <h1 className="pb-5 text-5xl">Contact Me</h1>
             <ContactForm />
           </div>
         </div>
+        <Footer />
       </div>
     </>
   );
