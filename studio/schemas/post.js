@@ -1,12 +1,13 @@
 export default {
   name: "post",
-  title: "Post",
+  title: "Blog Post",
   type: "document",
   fields: [
     {
       name: "title",
       title: "Title",
       type: "string",
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "slug",

@@ -1,8 +1,13 @@
 export default {
   name: "gallery",
-  type: "object",
+  type: "document",
   title: "Gallery",
   fields: [
+    {
+      name: "title",
+      title: "Title",
+      type: "string",
+    },
     {
       name: "images",
       type: "array",
@@ -29,20 +34,6 @@ export default {
       },
     },
     {
-      name: "display",
-      type: "string",
-      title: "Display as",
-      description: "How should we display these images?",
-      options: {
-        list: [
-          { title: "Stacked on top of eachother", value: "stacked" },
-          { title: "In-line", value: "inline" },
-          { title: "Carousel", value: "carousel" },
-        ],
-        layout: "radio", // <-- defaults to 'dropdown'
-      },
-    },
-    {
       name: "zoom",
       type: "boolean",
       title: "Zoom enabled",
@@ -51,17 +42,16 @@ export default {
   ],
   preview: {
     select: {
+      title: "title",
       images: "images",
       image: "images.0",
     },
     prepare(selection) {
       const { images, image } = selection;
 
-      return {
-        title: `Gallery block of ${Object.keys(images).length} images`,
-        subtitle: `Alt text: ${image.alt}`,
+      return Object.assign({}, selection, {
         media: image,
-      };
+      });
     },
   },
 };
