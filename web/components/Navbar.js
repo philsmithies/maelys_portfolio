@@ -12,7 +12,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="container flex justify-around py-8 mx-auto bg-teal-500 w-screen sticky">
+    <nav className="container flex justify-around py-1 mx-auto bg-teal-500 w-screen sticky z-10">
       <div>
         <Image
           src="/daisy.png"
@@ -25,7 +25,7 @@ const Navbar = () => {
         <a href="/" className="hover:text-teal-600">
           Home
         </a>
-        <a href="/About" className="hover:text-teal-600">
+        <a href="/about" className="hover:text-teal-600">
           About Me
         </a>
         <a href="" className="hover:text-teal-600">
@@ -34,7 +34,7 @@ const Navbar = () => {
         <a href="" className="hover:text-teal-600">
           Shop
         </a>
-        <a href="" className="hover:text-teal-600">
+        <a href="/contact" className="hover:text-teal-600">
           Contact
         </a>
       </div>
