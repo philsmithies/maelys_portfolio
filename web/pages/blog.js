@@ -1,23 +1,25 @@
 import Link from "next/link";
 import groq from "groq";
 import client from "../client";
-import Navbar from "../components/Navbar";
+import BlogItem from "../components/BlogItem";
 
 const Blog = ({ posts }) => {
   return (
     <div>
-      <Navbar />
       <h1>Welcome to a blog!</h1>
       {posts.length > 0 &&
         posts.map(
-          ({ _id, title = "", slug = "", publishedAt = "" }) =>
+          ({ _id, title = "", slug = "", publishedAt = "", author = "" }) =>
             slug && (
-              <li key={_id}>
-                <Link href="/post/[slug]" as={`/post/${slug.current}`}>
-                  <a>{title}</a>
-                </Link>{" "}
-                ({new Date(publishedAt).toDateString()})
-              </li>
+              <Link href="/post/[slug]" as={`/post/${slug.current}`}>
+                <BlogItem
+                  key={_id}
+                  author={author.name}
+                  title={title}
+                  slug={slug}
+                  publishedAt={publishedAt}
+                />
+              </Link>
             )
         )}
     </div>
