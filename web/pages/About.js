@@ -8,7 +8,7 @@ import Motion from "../components/Motion";
 const About = () => {
   return (
     <>
-      <div className="h-screen bg-slate-600 flex items-center justify-center">
+      <div className="h-screen bg-slate-600 flex items-center justify-center text-white">
         <div>
           <img src="/images/aboutme.jpeg" alt="about me" className="w-96" />
         </div>

@@ -4,22 +4,29 @@ import client from "../client";
 import BlogItem from "../components/BlogItem";
 
 const Blog = ({ posts }) => {
+  console.log(posts);
   return (
-    <div>
-      <h1>Welcome to a blog!</h1>
+    <div className="h-screen flex flex-col items-center max-w-4xl mx-auto">
+      <h1 className="text-4xl text-white mt-10">Blog</h1>
       {posts.length > 0 &&
         posts.map(
-          ({ _id, title = "", slug = "", publishedAt = "", author = "" }) =>
+          ({
+            _id,
+            title = "",
+            slug = "",
+            publishedAt = "",
+            author = "",
+            body = "",
+          }) =>
             slug && (
-              <Link href="/post/[slug]" as={`/post/${slug.current}`}>
-                <BlogItem
-                  key={_id}
-                  author={author.name}
-                  title={title}
-                  slug={slug}
-                  publishedAt={publishedAt}
-                />
-              </Link>
+              <BlogItem
+                body={body[0].children[0].text}
+                key={_id}
+                author={author.name}
+                title={title}
+                slug={slug}
+                publishedAt={publishedAt}
+              />
             )
         )}
     </div>
