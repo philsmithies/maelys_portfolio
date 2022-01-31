@@ -8,8 +8,8 @@ import FadeInImage from "../components/FadeInImage";
 const Index = () => {
   return (
     <div className="flex flex-col relative">
-      <div className="w-8/12 text-2xl text-center mx-auto p-10">
-        Hi, I’m Maelys. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      <div className="w-8/12 text-2xl text-center mx-auto p-10 my-10">
+        Hi, I’m Maëlys. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Sed pretium nibh a felis porta, vitae faucibus mi varius. Aliquam
         consectetur suscipit malesuada. ✨
       </div>
@@ -19,7 +19,13 @@ const Index = () => {
         </h1>
         <h1 className="text-6xl pl-20 font-serif">Big Drawings</h1>
       </div>
-      <FadeInImage />
+      {/* <FadeInImage /> */}
+      <div className="w-full my-40 mx-auto">
+        <div className="max-w-5xl mx-auto">
+          <h1 className="text-4xl pb-10">My Work</h1>
+          <HomePageGrid />
+        </div>
+      </div>
     </div>
   );
 };
