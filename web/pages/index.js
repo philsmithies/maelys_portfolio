@@ -3,11 +3,11 @@ import Head from "next/head";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import HomePageGrid from "../components/HomePageGrid";
-import ContactForm from "../components/ContactForm";
+import FadeInImage from "../components/FadeInImage";
 
 const Index = () => {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col relative">
       <div className="w-8/12 text-2xl text-center mx-auto p-10">
         Hi, I’m Maelys. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Sed pretium nibh a felis porta, vitae faucibus mi varius. Aliquam
@@ -19,10 +19,7 @@ const Index = () => {
         </h1>
         <h1 className="text-6xl pl-20 font-serif">Big Drawings</h1>
       </div>
-      <div className="flex flex-col items-center justify-between h-full">
-        <HomePageGrid />
-        <ContactForm />
-      </div>
+      <FadeInImage />
     </div>
   );
 };

@@ -1,30 +1,25 @@
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
+
 const HomePageGrid = () => {
   return (
-    <div className="h-fit flex items-center flex-col mx-auto w-4/6 pt-10">
-      <h1 className="mt-20 lg:mt-0 mb-10 lg:ml-20 text-3xl font-serif">
-        My Work
-      </h1>
-      <div class="container mx-auto space-y-2 lg:space-y-0 lg:gap-2 lg:grid lg:grid-cols-3 sm:max-w-md lg:max-w-max lg:pr-10 lg:pl-10 pb-10">
-        <div class="w-full rounded hover:opacity-50 hover:cursor-pointer">
-          <img src="/images/portfolio2.jpg" alt="image" />
-        </div>
-        <div class="w-full rounded hover:opacity-50 hover:cursor-pointer">
-          <img src="/images/portfolio3.jpg" alt="image" />
-        </div>
-        <div class="w-full rounded hover:opacity-50 hover:cursor-pointer">
-          <img src="/images/portfolio4.jpg" alt="image" />
-        </div>
-        <div class="w-full rounded hover:opacity-50 hover:cursor-pointer">
-          <img src="/images/portfolio7.jpg" alt="image" />
-        </div>
-        <div class="w-full rounded hover:opacity-50 hover:cursor-pointer">
-          <img src="/images/portfolio8.jpg" alt="image" />
-        </div>
-        <div class="w-full rounded hover:opacity-50 hover:cursor-pointer">
-          <img src="/images/portfolio9.jpg" alt="image" />
-        </div>
-      </div>
-    </div>
+    <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
+      <Masonry>
+        <img src="/images/portfolio7.jpg" alt="image" />
+        <img src="/images/portfolio6.jpg" alt="image" />
+        {/* Children */}
+        <img src="/images/portfolio4.jpg" alt="image" />
+        <img src="/images/portfolio9.jpg" alt="image" />
+        <img src="/images/portfolio3.jpg" alt="image" />
+        <img src="/images/portfolio2.jpg" alt="image" />
+        <img src="/images/portfolio7.jpg" alt="image" />
+        <img src="/images/portfolio10.jpg" alt="image" />
+        <img src="/images/portfolio1.jpg" alt="image" />
+        <img src="/images/portfolio11.jpg" alt="image" />
+        <img src="/images/portfolio12.jpg" alt="image" />
+        <img src="/images/portfolio13.jpg" alt="image" />
+        <img src="/images/portfolio14.jpg" alt="image" />
+      </Masonry>
+    </ResponsiveMasonry>
   );
 };
 
