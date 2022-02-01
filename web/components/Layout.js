@@ -30,12 +30,12 @@ const Layout = ({ children }) => {
         <title>Maëlys Cha: Illustrator</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <motion.div
+      {/* <motion.div
         animate={{ opacity: showNav ? 1 : 0 }}
         initial={{ opacity: 1 }}
-      >
-        <Navbar />
-      </motion.div>
+      > */}
+      <Navbar />
+      {/* </motion.div> */}
       {children}
       <Footer />
     </>
