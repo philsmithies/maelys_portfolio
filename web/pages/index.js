@@ -4,8 +4,8 @@ import HomePageGrid from "../components/HomePageGrid";
 const Index = () => {
   return (
     <>
-      <div className="flex flex-col">
-        <div className="w-8/12 text-2xl text-center mx-auto p-10 my-10 mt-20">
+      <div className="flex flex-col pt-20">
+        <div className="w-8/12 text-2xl text-center mx-auto p-10 my-10">
           Hi, I’m Maëlys. Lorem ipsum dolor sit amet, consectetur adipiscing
           elit. Sed pretium nibh a felis porta, vitae faucibus mi varius.
           Aliquam consectetur suscipit malesuada. ✨

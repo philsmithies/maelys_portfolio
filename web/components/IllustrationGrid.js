@@ -1,12 +1,11 @@
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
-import Navbar from "./Navbar";
 
 const IllustrationGrid = () => {
   return (
     <>
       <ResponsiveMasonry
         columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}
-        className="pt-24 z-0"
+        className="pt-24 pb-24 z-0"
       >
         <Masonry gutter={5}>
           <img
