@@ -26,57 +26,12 @@ const HomePageGrid = () => {
           className="hover:opacity-50 hover:cursor-pointer"
         />
         <img
-          src="/images/portfolio3.jpg"
-          alt="image"
-          className="hover:opacity-50 hover:cursor-pointer"
-        />
-        <img
           src="/images/portfolio2.jpg"
           alt="image"
           className="hover:opacity-50 hover:cursor-pointer"
         />
         <img
-          src="/images/portfolio7.jpg"
-          alt="image"
-          className="hover:opacity-50 hover:cursor-pointer"
-        />
-        <img
-          src="/images/portfolio10.jpg"
-          alt="image"
-          className="hover:opacity-50 hover:cursor-pointer"
-        />
-        <img
-          src="/images/portfolio1.jpg"
-          alt="image"
-          className="hover:opacity-50 hover:cursor-pointer"
-        />
-        <img
-          src="/images/portfolio11.jpg"
-          alt="image"
-          className="hover:opacity-50 hover:cursor-pointer"
-        />
-        <img
-          src="/images/portfolio12.jpg"
-          alt="image"
-          className="hover:opacity-50 hover:cursor-pointer"
-        />
-        <img
-          src="/images/portfolio13.jpg"
-          alt="image"
-          className="hover:opacity-50 hover:cursor-pointer"
-        />
-        <img
-          src="/images/portfolio14.jpg"
-          alt="image"
-          className="hover:opacity-50 hover:cursor-pointer"
-        />
-        <img
-          src="/images/portfolio16.jpg"
-          alt="image"
-          className="hover:opacity-50 hover:cursor-pointer"
-        />
-        <img
-          src="/images/portfolio17.jpg"
+          src="/images/portfolio3.jpg"
           alt="image"
           className="hover:opacity-50 hover:cursor-pointer"
         />
