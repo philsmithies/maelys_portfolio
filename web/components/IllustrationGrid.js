@@ -6,7 +6,7 @@ const IllustrationGrid = () => {
     <>
       <ResponsiveMasonry
         columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}
-        className="mt-24 z-0"
+        className="pt-24 z-0"
       >
         <Masonry gutter={5}>
           <img

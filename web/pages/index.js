@@ -1,17 +1,11 @@
 import Image from "next/image";
-import Head from "next/head";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import HomePageGrid from "../components/HomePageGrid";
-import FadeInImage from "../components/FadeInImage";
-import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
 
 const Index = () => {
   return (
     <>
-      <div className="flex flex-col relative">
-        <div className="w-8/12 text-2xl text-center mx-auto p-10 my-10">
+      <div className="flex flex-col">
+        <div className="w-8/12 text-2xl text-center mx-auto p-10 my-10 mt-20">
           Hi, I’m Maëlys. Lorem ipsum dolor sit amet, consectetur adipiscing
           elit. Sed pretium nibh a felis porta, vitae faucibus mi varius.
           Aliquam consectetur suscipit malesuada. ✨
