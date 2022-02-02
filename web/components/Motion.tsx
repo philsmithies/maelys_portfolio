@@ -3,7 +3,7 @@ import HomePageGrid from "./HomePageGrid";
 
 import React from "react";
 
-const Motion = () => {
+const Motion = (): JSX.Element => {
   return (
     <div className="bg-teal-500">
       <Parallax pages={2} style={{ left: "0" }}>

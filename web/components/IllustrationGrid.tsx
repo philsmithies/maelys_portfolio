@@ -1,6 +1,6 @@
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
-const IllustrationGrid = () => {
+const IllustrationGrid = (): JSX.Element => {
   return (
     <>
       <ResponsiveMasonry

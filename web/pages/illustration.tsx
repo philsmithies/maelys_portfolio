@@ -1,6 +1,6 @@
 import IllustrationGrid from "../components/IllustrationGrid";
 
-const Illustration = () => {
+const Illustration = (): JSX.Element => {
   return <IllustrationGrid />;
 };
 

@@ -1,7 +1,6 @@
-import Image from "next/image";
 import HomePageGrid from "../components/HomePageGrid";
 
-const Index = () => {
+const Index = (): JSX.Element => {
   return (
     <>
       <div className="flex flex-col pt-20">

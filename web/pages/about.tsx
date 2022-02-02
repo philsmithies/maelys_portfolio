@@ -1,20 +1,15 @@
-import Image from "next/image";
-import Head from "next/head";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import HomePageGrid from "../components/HomePageGrid";
-import Motion from "../components/Motion";
+import ContactForm from "../components/ContactForm";
 
-const About = () => {
+const About = (): JSX.Element => {
   return (
     <>
-      <div className="h-screen bg-slate-600 flex items-center justify-center text-white">
+      <div className="flex mx-auto justify-center pt-48 text-white">
         <div>
           <img src="/images/aboutme.jpeg" alt="about me" className="w-96" />
         </div>
         <div className="max-w-sm ml-10 flex flex-col">
-          <h1 className="text-4xl pb-3">Maelys Cha Cha</h1>
-          <p>
+          <h1 className="text-4xl pb-3 text-black">Maelys Cha Cha</h1>
+          <p className="text-black">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium
             nibh a felis porta, vitae faucibus mi varius. Proin ornare lobortis
             ex. Aliquam consectetur suscipit malesuada. Sed dignissim nibh non
@@ -30,15 +25,17 @@ const About = () => {
             semper metus. Aliquam suscipit turpis id dolor vulputate, nec
             blandit dui lacinia.
           </p>
-          <a href="/contact">
-            <button
-              class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded w-44 mt-5"
-              type="button"
-            >
-              Contact Me
-            </button>
-          </a>
         </div>
+      </div>
+      <div className="flex items-center justify-center py-24">
+        <div className="w-4/12 h-60 self-start flex flex-col justify-between">
+          <h1 className="text-4xl">Get in Touch</h1>
+          <div className="mb-20">
+            <p className="text-lg mb-3">maelyschay@gmail.com</p>
+            <p className="text-lg">France</p>
+          </div>
+        </div>
+        <ContactForm />
       </div>
     </>
   );
