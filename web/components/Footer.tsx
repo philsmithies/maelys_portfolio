@@ -1,10 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
+import SocialsBar from "./SocialsBar";
 
 const Footer = (): JSX.Element => {
   return (
-    <footer className="w-screen mx-auto">
-      <hr className="h-1 bg-black" />
+    <footer className="w-full mx-auto">
+      <hr style={{ height: 0.5 }} className="bg-black" />
       <div className="flex flex-col py-8">
         <div className="flex mx-auto pl-6">
           <Link href="https://www.instagram.com/greencatmoon">
@@ -18,7 +19,7 @@ const Footer = (): JSX.Element => {
             </p>
           </Link>
         </div>
-
+        <SocialsBar />
         <p className="text-gray-600 font-serif mx-auto text-sm">
           Maëlys Chavernac &copy; 2022
         </p>
