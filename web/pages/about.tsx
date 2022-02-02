@@ -1,4 +1,7 @@
 import ContactForm from "../components/ContactForm";
+import SocialsBar from "../components/SocialsBar";
+import Link from "next/link";
+import Image from "next/image";
 
 const About = (): JSX.Element => {
   return (
@@ -27,12 +30,34 @@ const About = (): JSX.Element => {
           </p>
         </div>
       </div>
-      <div className="flex items-center justify-center py-24">
+      <div className="flex items-center justify-center py-24 mx-auto max-w-4xl">
         <div className="w-4/12 h-60 self-start flex flex-col justify-between">
-          <h1 className="text-4xl">Get in Touch</h1>
+          <h1 className="text-4xl pt-5">Get in Touch</h1>
           <div className="mb-20">
             <p className="text-lg mb-3">maelyschay@gmail.com</p>
             <p className="text-lg">France</p>
+          </div>
+          <div className="flex">
+            <div className="mr-2">
+              <Link href="mailto:greencatmoon@gmail.com">
+                <Image
+                  src="/icons/email.svg"
+                  className="hover:cursor-pointer"
+                  height={18}
+                  width={18}
+                />
+              </Link>
+            </div>
+            <div className="mr-2">
+              <Link href="https://www.instagram.com/maelyschay">
+                <Image
+                  src="/icons/instagram.svg"
+                  className="hover:cursor-pointer"
+                  height={18}
+                  width={18}
+                />
+              </Link>
+            </div>
           </div>
         </div>
         <ContactForm />

@@ -9,7 +9,7 @@ const Index = (): JSX.Element => {
           elit. Sed pretium nibh a felis porta, vitae faucibus mi varius.
           Aliquam consectetur suscipit malesuada. ✨
         </div>
-        <div className="w-full h-screen bg-cover bg-[url('/images/portfolio8.jpg')] top-[200px]">
+        <div className="w-11/12 h-screen mx-auto bg-cover bg-[url('/images/portfolio8.jpg')] top-[200px]">
           <h1 className="text-6xl pl-40 pt-40 font-serif text-white">
             Big Heart
           </h1>

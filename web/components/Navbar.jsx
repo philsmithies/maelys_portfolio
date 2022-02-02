@@ -1,10 +1,39 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { motion, useViewportScroll } from "framer-motion";
 
-const Navbar = (): JSX.Element => {
+const Navbar = () => {
+  const [hidden, setHidden] = useState(false);
+
+  function update() {
+    if (scrollY?.current < scrollY?.prev) {
+      setHidden(false);
+    } else if (scrollY?.current > 100 && scrollY?.current > scrollY?.prev) {
+      setHidden(true);
+    }
+  }
+
+  const { scrollY } = useViewportScroll();
+
+  useEffect(() => {
+    return scrollY.onChange(() => update());
+  });
+
+  const variants = {
+    /** this is the "visible" key and it's respective style object **/
+    visible: { opacity: 1, y: 0 },
+    /** this is the "hidden" key and it's respective style object **/
+    hidden: { opacity: 0, y: -25 },
+  };
+
   return (
-    <nav className="flex justify-around py-1 bg-red-400 left-0 right-0 fixed z-10 ">
+    <motion.nav
+      variants={variants}
+      animate={hidden ? "hidden" : "visible"}
+      transition={{ ease: [0.1, 0.25, 0.3, 1], duration: 0.6 }}
+      className="flex justify-around py-1 bg-white left-0 right-0 fixed z-10 "
+    >
       <Link href="/">
         <div className="hover:cursor-pointer fill-black pb-5 pt-5">
           <h1 className="text-4xl font-semibold transition duration-150 hover:cursor-pointer">
@@ -41,7 +70,7 @@ const Navbar = (): JSX.Element => {
           Shop
         </a> */}
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 
