@@ -19,8 +19,6 @@ const ImageComponent = ({ value, isInline }) => {
       loading="lazy"
       style={{
         padding: "2em",
-        // Display alongside text if image appears inside a block text span
-        // display: isInline ? "inline-block" : "block",
         aspectRatio: width / height,
       }}
     />
@@ -44,7 +42,7 @@ const Post = ({ post }) => {
   } = post;
   console.log(post);
   return (
-    <article className="h-screen w-full pt-32 mb-32">
+    <article className="h-max w-full pt-32 mb-32">
       <div className="w-6/12 mx-auto p-3">
         <Link href="/blog">
           <button className="text-gray-500 shadow border-grey-500 border-2 hover:bg-gray-200 focus:shadow-outline focus:outline-none font-bold py-2 px-4 rounded">

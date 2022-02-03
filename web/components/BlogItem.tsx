@@ -7,31 +7,37 @@ function urlFor(source) {
   return imageUrlBuilder(client).image(source);
 }
 
-const BlogItem = ({ title, publishedAt, author, body, slug, mainImage }) => {
+function previewText(body) {
+  return body.substring(0, 200);
+}
+
+const BlogItem = ({
+  title,
+  publishedAt,
+  body,
+  slug,
+  mainImage,
+  categories,
+}) => {
   return (
     <Link href="/post/[slug]" as={`/post/${slug.current}`}>
-      <div className="bg-white p-10 rounded-2xl flex flex-col m-10 hover:cursor-pointer hover:bg-slate-100 border-2 border-emerald-200">
-        <h1 className="text-xl">{title}</h1>
-        <p className="text-sm">{body}</p>
-        <p className="text-sm">{new Date(publishedAt).toDateString()}</p>
+      <div className="bg-white border-1 border-slate-400 p-10 flex flex-col m-2 rounded-lg hover:cursor-pointer hover:bg-slate-100 w-6/12 hover:drop-shadow-xl">
         {mainImage && (
           <img
-            src={urlFor(mainImage)
-              .image(mainImage)
-              .fit("fill")
-              .auto("format")
-              .url()}
+            src={urlFor(mainImage).image(mainImage).url()}
             alt={mainImage.alt || " "}
-            loading="lazy"
-            style={{
-              padding: "2em",
-              width: "20%",
-              // Display alongside text if image appears inside a block text span
-              // display: isInline ? "inline-block" : "block",
-            }}
+            className="w-full h-52 mb-6 object-cover"
           />
         )}
-        <h2>{author}</h2>
+        <h1 className="text-3xl">{title}</h1>
+        <p className="text-sm">{`${previewText(body)}...`}</p>
+        {/* {categories && (
+          <ul className="flex text-gray-400 pb-36">
+            {categories.map((category) => (
+              <p key={category}>Posted in {category}</p>
+            ))}
+          </ul>
+        )} */}
       </div>
     </Link>
   );
