@@ -14,15 +14,13 @@ const ImageComponent = ({ value, isInline }) => {
   const { width, height } = getImageDimensions(value);
   return (
     <img
-      src={urlFor(value).image(value).fit("max").auto("format").url()}
+      src={urlFor(value).image(value).fit("fill").auto("format").url()}
       alt={value.alt || " "}
       loading="lazy"
       style={{
-        border: "1px solid black",
-        paddingTop: "2em",
+        padding: "2em",
         // Display alongside text if image appears inside a block text span
-        display: isInline ? "inline-block" : "block",
-        // Avoid jumping around with aspect-ratio CSS property
+        // display: isInline ? "inline-block" : "block",
         aspectRatio: width / height,
       }}
     />
@@ -49,7 +47,7 @@ const Post = ({ post }) => {
     <article className="h-screen w-full pt-32 mb-32">
       <div className="w-6/12 mx-auto p-3">
         <Link href="/blog">
-          <button className="text-gray-500 shadow border-grey-500 border-2 hover:bg-teal-400 focus:shadow-outline focus:outline-none font-bold py-2 px-4 rounded">
+          <button className="text-gray-500 shadow border-grey-500 border-2 hover:bg-gray-200 focus:shadow-outline focus:outline-none font-bold py-2 px-4 rounded">
             Back
           </button>
         </Link>
@@ -65,7 +63,7 @@ const Post = ({ post }) => {
         )}
         <PortableText value={body} components={components} />
         {/* {categories && (
-          <ul className="flex text-gray-400">
+          <ul className="flex text-gray-400 pb-36">
             {categories.map((category) => (
               <p key={category}>Posted in {category}</p>
             ))}

@@ -4,10 +4,11 @@ import client from "../client";
 import BlogItem from "../components/BlogItem";
 
 const Blog = ({ posts }) => {
+  console.log(posts);
   return (
     <div className="h-screen flex flex-col items-center max-w-4xl mx-auto">
       <div className="border-2 border-black w-full h-5/6 mt-40">
-        <h1 className="text-3xl p-10 mt-24 self-start">Latest Posts</h1>
+        <h1 className="text-4xl p-10 mt-24 self-start">Blog</h1>
         {posts.length > 0 &&
           posts.map(
             ({
@@ -17,6 +18,7 @@ const Blog = ({ posts }) => {
               publishedAt = "",
               author = "",
               body = "",
+              mainImage = "",
             }) =>
               slug && (
                 <BlogItem
@@ -26,6 +28,7 @@ const Blog = ({ posts }) => {
                   title={title}
                   slug={slug}
                   publishedAt={publishedAt}
+                  mainImage={mainImage}
                 />
               )
           )}
