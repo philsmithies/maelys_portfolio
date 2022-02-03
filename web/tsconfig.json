@@ -19,7 +19,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "pages/filteredPosts.jsx"
+    "pages/filteredPosts.jsx",
+    "components/Navbar.jsx"
   ],
   "exclude": ["node_modules"]
 }
