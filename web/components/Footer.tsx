@@ -9,15 +9,20 @@ const Footer = (): JSX.Element => {
       <div className="flex flex-col py-8">
         <div className="flex mx-auto pl-6">
           <Link href="https://www.instagram.com/greencatmoon">
-            <p className="hover:cursor-pointer text-xl border-black border-b-2 mr-2 hover:text-teal-600 transition duration-150 border-transparent hover:border-teal-500">
+            <p className="hover:cursor-pointer text-xl border-black border-b-2 mr-2 hover:text-orange-400 transition duration-150 border-transparent hover:border-orange-400">
               Photos
             </p>
           </Link>
           <Link href="/blog">
-            <p className="hover:cursor-pointer text-xl border-black border-b-2 mr-2 hover:text-teal-600 transition duration-150 border-transparent hover:border-teal-500">
+            <p className="hover:cursor-pointer text-xl border-black border-b-2 mr-2 hover:text-orange-400 transition duration-150 border-transparent hover:border-orange-400">
               Thoughts
             </p>
           </Link>
+          <a href="/about#contact">
+            <p className="hover:cursor-pointer text-xl border-black border-b-2 mr-2 hover:text-orange-400 transition duration-150 border-transparent hover:border-orange-400">
+              Contact
+            </p>
+          </a>
         </div>
         <SocialsBar />
         <p className="text-gray-600 font-serif mx-auto text-sm">

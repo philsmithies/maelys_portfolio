@@ -4,10 +4,9 @@ import client from "../client";
 import BlogItem from "../components/BlogItem";
 
 const Blog = ({ posts }) => {
-  console.log(posts);
   return (
     <div className="h-screen flex flex-col items-center max-w-4xl mx-auto">
-      <div className="w-full h-5/6 mt-24">
+      <div className="w-full h-5/6 mt-32 rounded-xl">
         <h1 className="text-4xl p-10 mx-auto text-center">Blog</h1>
         <div className="flex item">
           {posts.length > 0 &&

@@ -32,7 +32,7 @@ const Navbar = () => {
       variants={variants}
       animate={hidden ? "hidden" : "visible"}
       transition={{ ease: [0.1, 0.25, 0.3, 1], duration: 0.6 }}
-      className="flex justify-around bg-red-400 m-3 rounded-lg left-0 right-0 mx-9 fixed z-10 "
+      className="flex justify-around bg-white drop-shadow-sm m-3 rounded-lg left-0 right-0 mx-9 fixed z-10 "
     >
       <Link href="/">
         <div className="hover:cursor-pointer fill-black py-2">
@@ -45,29 +45,29 @@ const Navbar = () => {
       <div className="space-x-8 flex items-center font-serif">
         <a
           href="/"
-          className="hover:text-teal-600 transition duration-150 border-b-2 border-transparent hover:border-teal-500"
+          className="hover:text-orange-400 transition duration-150 border-b-2 border-transparent hover:border-orange-400"
         >
           Home
         </a>
         <a
           href="/illustration"
-          className="hover:text-teal-600 transition duration-150 border-b-2 border-transparent hover:border-teal-500"
+          className="hover:text-orange-400 transition duration-150 border-b-2 border-transparent hover:border-orange-400"
         >
           Illustration
         </a>
         <a
           href="/blog"
-          className="hover:text-teal-600 transition duration-150 border-b-2 border-transparent hover:border-teal-500"
+          className="hover:text-orange-400 transition duration-150 border-b-2 border-transparent hover:border-orange-400"
         >
           Thoughts
         </a>
         <a
           href="/about"
-          className="hover:text-teal-600 transition duration-150 border-b-2 border-transparent hover:border-teal-500"
+          className="hover:text-orange-400 transition duration-150 border-b-2 border-transparent hover:border-orange-400"
         >
           About
         </a>
-        {/* <a href="" className="hover:text-teal-600">
+        {/* <a href="" className="hover:text-orange-400">
           Shop
         </a> */}
       </div>

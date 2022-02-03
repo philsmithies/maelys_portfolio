@@ -62,7 +62,9 @@ const About = (): JSX.Element => {
             </div>
           </div>
         </div>
-        <ContactForm />
+        <div id="contact">
+          <ContactForm />
+        </div>
       </div>
     </>
   );
