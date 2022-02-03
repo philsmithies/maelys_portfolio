@@ -1,12 +1,39 @@
 // [slug].js
 import groq from "groq";
 import imageUrlBuilder from "@sanity/image-url";
-import BlockContent from "@sanity/block-content-to-react";
 import client from "../../client";
+import Link from "next/link";
+import { PortableText } from "@portabletext/react";
+import { getImageDimensions } from "@sanity/asset-utils";
 
 function urlFor(source) {
   return imageUrlBuilder(client).image(source);
 }
+
+const ImageComponent = ({ value, isInline }) => {
+  const { width, height } = getImageDimensions(value);
+  return (
+    <img
+      src={urlFor(value).image(value).fit("max").auto("format").url()}
+      alt={value.alt || " "}
+      loading="lazy"
+      style={{
+        border: "1px solid black",
+        paddingTop: "2em",
+        // Display alongside text if image appears inside a block text span
+        display: isInline ? "inline-block" : "block",
+        // Avoid jumping around with aspect-ratio CSS property
+        aspectRatio: width / height,
+      }}
+    />
+  );
+};
+
+const components = {
+  types: {
+    image: ImageComponent,
+  },
+};
 
 const Post = ({ post }) => {
   const {
@@ -15,29 +42,36 @@ const Post = ({ post }) => {
     categories,
     authorImage,
     body,
+    mainImage,
   } = post;
+  console.log(post);
   return (
-    <article>
-      <h1>{title}</h1>
-      <span>By {name}</span>
-      <BlockContent
-        blocks={body}
-        imageOptions={{ w: 400, h: 240, fit: "max" }}
-        {...client.config()}
-      />
-      {categories && (
-        <ul>
-          Posted in
-          {categories.map((category) => (
-            <li key={category}>{category}</li>
-          ))}
-        </ul>
-      )}
-      {authorImage && (
-        <div>
-          <img src={urlFor(authorImage).width(50).url()} />
-        </div>
-      )}
+    <article className="h-screen w-full pt-32 mb-32">
+      <div className="w-6/12 mx-auto p-3">
+        <Link href="/blog">
+          <button className="text-gray-500 shadow border-grey-500 border-2 hover:bg-teal-400 focus:shadow-outline focus:outline-none font-bold py-2 px-4 rounded">
+            Back
+          </button>
+        </Link>
+        <h1 className="text-3xl mt-10">{title}</h1>
+        <span>By {name}</span>
+        {authorImage && (
+          <div>
+            <img
+              src={urlFor(authorImage).width(50).height(50).url()}
+              className="rounded-full mb-10"
+            />
+          </div>
+        )}
+        <PortableText value={body} components={components} />
+        {/* {categories && (
+          <ul className="flex text-gray-400">
+            {categories.map((category) => (
+              <p key={category}>Posted in {category}</p>
+            ))}
+          </ul>
+        )} */}
+      </div>
     </article>
   );
 };

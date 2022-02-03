@@ -9,7 +9,7 @@ const Navbar = () => {
   function update() {
     if (scrollY?.current < scrollY?.prev) {
       setHidden(false);
-    } else if (scrollY?.current > 100 && scrollY?.current > scrollY?.prev) {
+    } else if (scrollY?.current > 50 && scrollY?.current > scrollY?.prev) {
       setHidden(true);
     }
   }
@@ -32,13 +32,14 @@ const Navbar = () => {
       variants={variants}
       animate={hidden ? "hidden" : "visible"}
       transition={{ ease: [0.1, 0.25, 0.3, 1], duration: 0.6 }}
-      className="flex justify-around py-1 bg-white left-0 right-0 fixed z-10 "
+      className="flex justify-around bg-red-400 m-3 rounded-lg left-0 right-0 mx-9 fixed z-10 "
     >
       <Link href="/">
-        <div className="hover:cursor-pointer fill-black pb-5 pt-5">
-          <h1 className="text-4xl font-semibold transition duration-150 hover:cursor-pointer">
+        <div className="hover:cursor-pointer fill-black py-2">
+          {/* <h1 className="text-3xl font-semibold transition duration-150 hover:cursor-pointer">
             MAËLYS CHA
-          </h1>
+          </h1> */}
+          <img src="/logo.png" className="h-16" />
         </div>
       </Link>
       <div className="space-x-8 flex items-center font-serif">

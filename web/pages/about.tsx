@@ -23,10 +23,12 @@ const About = (): JSX.Element => {
             vitae mauris. Vivamus non nisi imperdiet, convallis mauris nec,
             tincidunt purus. Nunc aliquet vel nisi at rutrum. Cras gravida
             convallis justo non eleifend. Nullam tellus mi, varius ut lacus eu,
-            lacinia aliquet enim. Phasellus eu tincidunt libero. Integer
-            fermentum nec velit eget vulputate. Sed vitae fringilla odio, in
-            semper metus. Aliquam suscipit turpis id dolor vulputate, nec
-            blandit dui lacinia.
+            lacinia aliquet enim.
+            <br />
+            <br />
+            Phasellus eu tincidunt libero. Integer fermentum nec velit eget
+            vulputate. Sed vitae fringilla odio, in semper metus. Aliquam
+            suscipit turpis id dolor vulputate, nec blandit dui lacinia.
           </p>
         </div>
       </div>

@@ -14,7 +14,6 @@ const HomePageGrid = (): JSX.Element => {
           alt="image"
           className="hover:opacity-50 hover:cursor-pointer"
         />
-        {/* Children */}
         <img
           src="/images/portfolio4.jpg"
           alt="image"
