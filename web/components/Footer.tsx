@@ -29,6 +29,7 @@ const Footer = (): JSX.Element => {
           Maëlys Chavernac &copy; 2022
         </p>
       </div>
+      {/* <Image src="/images/footerlogo.png" className="h-3/4 w-3/12" /> */}
     </footer>
   );
 };

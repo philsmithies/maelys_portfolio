@@ -21,7 +21,7 @@ const BlogItem = ({
 }) => {
   return (
     <Link href="/post/[slug]" as={`/post/${slug.current}`}>
-      <div className="bg-white border-1 border-slate-400 p-10 flex flex-col m-2 rounded-lg hover:cursor-pointer hover:bg-gray-100 w-6/12 hover:drop-shadow-md transition-all">
+      <div className="bg-white border-1 border-slate-400 p-10 flex flex-col m-2 rounded-lg hover:cursor-pointer hover:bg-gray-100 sm:w-10/12 md:w-8/12 max-w-md hover:drop-shadow-md transition-all ">
         {mainImage && (
           <img
             src={urlFor(mainImage).image(mainImage).url()}

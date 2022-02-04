@@ -2,7 +2,10 @@ import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 const HomePageGrid = (): JSX.Element => {
   return (
-    <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
+    <ResponsiveMasonry
+      columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}
+      className="px-12"
+    >
       <Masonry gutter={5}>
         <img
           src="/images/portfolio7.jpg"
@@ -31,6 +34,21 @@ const HomePageGrid = (): JSX.Element => {
         />
         <img
           src="/images/portfolio3.jpg"
+          alt="image"
+          className="hover:opacity-50 hover:cursor-pointer"
+        />
+        <img
+          src="/images/portfolio5.jpg"
+          alt="image"
+          className="hover:opacity-50 hover:cursor-pointer"
+        />
+        <img
+          src="/images/portfolio18.jpg"
+          alt="image"
+          className="hover:opacity-50 hover:cursor-pointer"
+        />
+        <img
+          src="/images/portfolio13.jpg"
           alt="image"
           className="hover:opacity-50 hover:cursor-pointer"
         />

@@ -9,16 +9,10 @@ const Index = (): JSX.Element => {
           elit. Sed pretium nibh a felis porta, vitae faucibus mi varius.
           Aliquam consectetur suscipit malesuada. ✨
         </div>
-        <div className="w-11/12 h-screen mx-auto bg-cover bg-[url('/images/portfolio8.jpg')] top-[200px]">
-          <h1 className="text-6xl pl-40 pt-40 font-serif text-white">
-            Big Heart
-          </h1>
-          <h1 className="text-6xl pl-20 font-serif">Big Drawings</h1>
-        </div>
-        {/* <FadeInImage /> */}
+        <div className="w-11/12 max-w-6xl h-screen mx-auto bg-cover bg-[url('/images/portfolio8.jpg')] top-[200px]" />
         <div className="w-full my-40 mx-auto">
-          <div className="max-w-5xl mx-auto">
-            <h1 className="text-4xl pb-10 font-bold">My Work</h1>
+          <div className="max-w-6xl mx-auto">
+            <h1 className="text-4xl pb-10 text-center">My Work</h1>
             <HomePageGrid />
           </div>
         </div>
