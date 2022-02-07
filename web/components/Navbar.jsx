@@ -39,7 +39,7 @@ const Navbar = () => {
           {/* <h1 className="text-3xl font-semibold transition duration-150 hover:cursor-pointer">
             MAËLYS CHA
           </h1> */}
-          <img src="/logo.png" className="h-16" />
+          <img src="/logo.png" className="h-5/5 md:h-16" />
         </div>
       </Link>
       <div className="flex items-center space-x-8 font-serif">
