@@ -16,6 +16,10 @@ const Navbar = () => {
     }
   }
 
+  function toggleMobile() {
+    setMobileHidden(!mobileHidden);
+  }
+
   const { scrollY } = useViewportScroll();
 
   useEffect(() => {
@@ -44,7 +48,7 @@ const Navbar = () => {
         </Link>
         <FaGripLines
           className="mr-4 h-6 w-6 cursor-pointer md:hidden"
-          onClick={() => setMobileHidden(!mobileHidden)}
+          onClick={toggleMobile}
         />
       </div>
 
@@ -57,26 +61,35 @@ const Navbar = () => {
         {/* <FaRegWindowClose className="absolute top-0 right-0" /> */}
         <div className="h-2/6">
           <ul className="flex h-full flex-col justify-between text-4xl transition-colors ">
-            <Link href="/" onClick={() => setMobileHidden(!mobileHidden)}>
-              <li className="hover:cursor-pointer hover:text-orange-400">
+            <Link href="/">
+              <li
+                className="hover:cursor-pointer hover:text-orange-400"
+                onClick={toggleMobile}
+              >
                 Home
               </li>
             </Link>
-            <Link
-              href="/illustration"
-              onClick={() => setMobileHidden(!mobileHidden)}
-            >
-              <li className="hover:cursor-pointer hover:text-orange-400">
+            <Link href="/illustration">
+              <li
+                className="hover:cursor-pointer hover:text-orange-400"
+                onClick={toggleMobile}
+              >
                 Illustration
               </li>
             </Link>
-            <Link href="/blog" onClick={() => setMobileHidden(!mobileHidden)}>
-              <li className="hover:cursor-pointer hover:text-orange-400">
+            <Link href="/blog">
+              <li
+                className="hover:cursor-pointer hover:text-orange-400"
+                onClick={toggleMobile}
+              >
                 Thoughts
               </li>
             </Link>
-            <Link href="/about" onClick={() => setMobileHidden(!mobileHidden)}>
-              <li className="hover:cursor-pointer hover:text-orange-400">
+            <Link href="/about">
+              <li
+                className="hover:cursor-pointer hover:text-orange-400"
+                onClick={toggleMobile}
+              >
                 About
               </li>
             </Link>

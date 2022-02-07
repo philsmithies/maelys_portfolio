@@ -40,7 +40,7 @@ const ContactForm = (): JSX.Element => {
   };
 
   return (
-    <form className="mt-5 w-full max-w-lg">
+    <form className="mt-5 w-5/6 max-w-lg">
       <div className="-mx-3 mb-2 flex flex-wrap ">
         <div className="mb-2 flex w-full px-3 md:mb-0">
           <input

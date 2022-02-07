@@ -5,7 +5,6 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { motion, useViewportScroll } from "framer-motion";
 import { FaArrowCircleUp } from "react-icons/fa";
-import ImageModal from "../components/ImageModal";
 
 const Index = () => {
   const [showScroll, setShowScroll] = useState(false);
@@ -57,7 +56,6 @@ const Index = () => {
           <div className="mx-auto max-w-6xl">
             <h1 className="pb-10 text-center text-4xl">My Work</h1>
             <HomePageGrid />
-            <ImageModal />
           </div>
           <div className="mx-auto flex max-w-4xl flex-col items-center justify-center pt-24 md:flex-row">
             <div className="mx-auto flex h-60 w-4/12 flex-col justify-between self-start md:mx-0">
@@ -80,7 +78,7 @@ const Index = () => {
             >
               <FaArrowCircleUp
                 onClick={scrollTop}
-                className="fixed bottom-3 right-2 h-10 w-10 fill-orange-400 hover:cursor-pointer md:right-10 md:bottom-10"
+                className="fixed bottom-3 right-1 h-10 w-10 fill-orange-400 hover:cursor-pointer md:right-10 md:bottom-10"
               />
             </motion.div>
           </div>
