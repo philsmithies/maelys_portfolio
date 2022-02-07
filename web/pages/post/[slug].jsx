@@ -42,20 +42,20 @@ const Post = ({ post }) => {
   } = post;
   console.log(post);
   return (
-    <article className="h-max w-full pt-32 mb-32">
-      <div className="w-6/12 mx-auto p-3">
+    <article className="mb-32 h-max w-full pt-32">
+      <div className="mx-auto w-6/12 p-3">
         <Link href="/blog">
-          <button className="text-gray-500 shadow border-grey-500 border-2 hover:bg-gray-200 focus:shadow-outline focus:outline-none font-bold py-2 px-4 rounded">
+          <button className="border-grey-500 focus:shadow-outline rounded border-2 py-2 px-4 font-bold text-gray-500 shadow hover:bg-gray-200 focus:outline-none">
             Back
           </button>
         </Link>
-        <h1 className="text-3xl mt-10">{title}</h1>
+        <h1 className="mt-10 text-3xl">{title}</h1>
         <span>By {name}</span>
         {authorImage && (
           <div>
             <img
               src={urlFor(authorImage).width(50).height(50).url()}
-              className="rounded-full mb-10"
+              className="mb-10 rounded-full"
             />
           </div>
         )}

@@ -5,9 +5,9 @@ import BlogItem from "../components/BlogItem";
 
 const Blog = ({ posts }) => {
   return (
-    <div className="h-screen flex flex-col items-center max-w-4xl mx-auto">
-      <div className="w-full h-5/6 mt-32 rounded-xl">
-        <h1 className="text-4xl p-10 mx-auto text-center">Blog</h1>
+    <div className="mx-auto flex h-screen max-w-4xl flex-col items-center">
+      <div className="mt-32 h-5/6 w-full rounded-xl">
+        <h1 className="mx-auto p-10 text-center text-4xl">Blog</h1>
         <div className="flex flex-col items-center md:flex-row">
           {posts.length > 0 &&
             posts.map(

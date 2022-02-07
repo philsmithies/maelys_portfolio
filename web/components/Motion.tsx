@@ -16,12 +16,12 @@ const Motion = (): JSX.Element => {
             alignItems: "center",
           }}
         >
-          <div className="flex flex-col w-full">
-            <div className="w-full h-screen bg-cover bg-[url('/images/portfolio8.jpg')] top-[200px]">
-              <h1 className="text-6xl pl-40 pt-40 font-serif text-white">
+          <div className="flex w-full flex-col">
+            <div className="top-[200px] h-screen w-full bg-[url('/images/portfolio8.jpg')] bg-cover">
+              <h1 className="pl-40 pt-40 font-serif text-6xl text-white">
                 Big Heart
               </h1>
-              <h1 className="text-6xl pl-20 font-serif">Big Drawings</h1>
+              <h1 className="pl-20 font-serif text-6xl">Big Drawings</h1>
             </div>
           </div>
         </ParallaxLayer>

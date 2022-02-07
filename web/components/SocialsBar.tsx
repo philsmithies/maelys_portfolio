@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const SocialsBar = (): JSX.Element => {
   return (
-    <div className="flex w-full justify-center my-5">
+    <div className="my-5 flex w-full justify-center">
       <div className="mr-2">
         <Link href="mailto:greencatmoon@gmail.com">
           <Image

@@ -4,28 +4,28 @@ import SocialsBar from "./SocialsBar";
 
 const Footer = (): JSX.Element => {
   return (
-    <footer className="w-full mx-auto">
+    <footer className="mx-auto w-full">
       <hr style={{ height: 0.5 }} className="bg-black" />
       <div className="flex flex-col py-8">
-        <div className="flex mx-auto pl-6">
+        <div className="mx-auto flex pl-6">
           <Link href="https://www.instagram.com/greencatmoon">
-            <p className="hover:cursor-pointer text-xl border-black border-b-2 mr-2 hover:text-orange-400 transition duration-150 border-transparent hover:border-orange-400">
+            <p className="mr-2 border-b-2 border-black border-transparent text-xl transition duration-150 hover:cursor-pointer hover:border-orange-400 hover:text-orange-400">
               Photos
             </p>
           </Link>
           <Link href="/blog">
-            <p className="hover:cursor-pointer text-xl border-black border-b-2 mr-2 hover:text-orange-400 transition duration-150 border-transparent hover:border-orange-400">
+            <p className="mr-2 border-b-2 border-black border-transparent text-xl transition duration-150 hover:cursor-pointer hover:border-orange-400 hover:text-orange-400">
               Thoughts
             </p>
           </Link>
           <a href="/about#contact">
-            <p className="hover:cursor-pointer text-xl border-black border-b-2 mr-2 hover:text-orange-400 transition duration-150 border-transparent hover:border-orange-400">
+            <p className="mr-2 border-b-2 border-black border-transparent text-xl transition duration-150 hover:cursor-pointer hover:border-orange-400 hover:text-orange-400">
               Contact
             </p>
           </a>
         </div>
         <SocialsBar />
-        <p className="text-gray-600 font-serif mx-auto text-sm">
+        <p className="mx-auto font-serif text-sm text-gray-600">
           Maëlys Chavernac &copy; 2022
         </p>
       </div>

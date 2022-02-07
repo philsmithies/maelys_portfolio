@@ -10,47 +10,47 @@ const HomePageGrid = (): JSX.Element => {
         <img
           src="/images/portfolio7.jpg"
           alt="image"
-          className="hover:opacity-50 hover:cursor-pointer"
+          className="hover:cursor-pointer hover:opacity-50"
         />
         <img
           src="/images/portfolio6.jpg"
           alt="image"
-          className="hover:opacity-50 hover:cursor-pointer"
+          className="hover:cursor-pointer hover:opacity-50"
         />
         <img
           src="/images/portfolio4.jpg"
           alt="image"
-          className="hover:opacity-50 hover:cursor-pointer"
+          className="hover:cursor-pointer hover:opacity-50"
         />
         <img
           src="/images/portfolio9.jpg"
           alt="image"
-          className="hover:opacity-50 hover:cursor-pointer"
+          className="hover:cursor-pointer hover:opacity-50"
         />
         <img
           src="/images/portfolio2.jpg"
           alt="image"
-          className="hover:opacity-50 hover:cursor-pointer"
+          className="hover:cursor-pointer hover:opacity-50"
         />
         <img
           src="/images/portfolio3.jpg"
           alt="image"
-          className="hover:opacity-50 hover:cursor-pointer"
+          className="hover:cursor-pointer hover:opacity-50"
         />
         <img
           src="/images/portfolio5.jpg"
           alt="image"
-          className="hover:opacity-50 hover:cursor-pointer"
+          className="hover:cursor-pointer hover:opacity-50"
         />
         <img
           src="/images/portfolio18.jpg"
           alt="image"
-          className="hover:opacity-50 hover:cursor-pointer"
+          className="hover:cursor-pointer hover:opacity-50"
         />
         <img
           src="/images/portfolio13.jpg"
           alt="image"
-          className="hover:opacity-50 hover:cursor-pointer"
+          className="hover:cursor-pointer hover:opacity-50"
         />
       </Masonry>
     </ResponsiveMasonry>

@@ -6,12 +6,12 @@ import Image from "next/image";
 const About = (): JSX.Element => {
   return (
     <>
-      <div className="flex mx-auto justify-center pt-48 text-white">
+      <div className="mx-auto flex justify-center pt-48 text-white">
         <div>
           <img src="/images/aboutme.jpeg" alt="about me" className="w-96" />
         </div>
-        <div className="max-w-sm ml-10 flex flex-col">
-          <h1 className="text-4xl pb-3 text-black">Maelys Cha Cha</h1>
+        <div className="ml-10 flex max-w-sm flex-col">
+          <h1 className="pb-3 text-4xl text-black">Maelys Cha Cha</h1>
           <p className="text-black">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium
             nibh a felis porta, vitae faucibus mi varius. Proin ornare lobortis
@@ -32,11 +32,11 @@ const About = (): JSX.Element => {
           </p>
         </div>
       </div>
-      <div className="flex items-center justify-center py-24 mx-auto max-w-4xl">
-        <div className="w-4/12 h-60 self-start flex flex-col justify-between">
-          <h1 className="text-4xl pt-5">Get in Touch</h1>
+      <div className="mx-auto flex max-w-4xl items-center justify-center py-24">
+        <div className="flex h-60 w-4/12 flex-col justify-between self-start">
+          <h1 className="pt-5 text-4xl">Get in Touch</h1>
           <div className="mb-20">
-            <p className="text-lg mb-3">maelyschay@gmail.com</p>
+            <p className="mb-3 text-lg">maelyschay@gmail.com</p>
             <p className="text-lg">France</p>
           </div>
           <div className="flex">

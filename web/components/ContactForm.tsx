@@ -44,16 +44,16 @@ const ContactForm = (): JSX.Element => {
 
   return (
     <form className="w-full max-w-lg">
-      <div className="flex flex-wrap -mx-3 mb-2 ">
-        <div className="w-full md:w-1/2 px-3 mb-2 md:mb-0">
+      <div className="-mx-3 mb-2 flex flex-wrap ">
+        <div className="mb-2 w-full px-3 md:mb-0 md:w-1/2">
           <label
-            className="block uppercase tracking-wide text-black text-xs font-bold mb-2"
+            className="mb-2 block text-xs font-bold uppercase tracking-wide text-black"
             htmlFor="grid-first-name"
           >
             First Name
           </label>
           <input
-            className="appearance-none block w-full bg-gray-200 text-black border rounded py-3 px-4 mb-1 leading-tight focus:outline-none focus:bg-white"
+            className="mb-1 block w-full appearance-none rounded border bg-gray-200 py-3 px-4 leading-tight text-black focus:bg-white focus:outline-none"
             id="grid-first-name"
             type="text"
             placeholder="Jane"
@@ -64,15 +64,15 @@ const ContactForm = (): JSX.Element => {
             required
           />
         </div>
-        <div className="w-full md:w-1/2 px-3">
+        <div className="w-full px-3 md:w-1/2">
           <label
-            className="block uppercase tracking-wide text-black text-xs font-bold mb-2"
+            className="mb-2 block text-xs font-bold uppercase tracking-wide text-black"
             htmlFor="grid-last-name"
           >
             Last Name
           </label>
           <input
-            className="appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+            className="block w-full appearance-none rounded border border-gray-200 bg-gray-200 py-3 px-4 leading-tight text-black focus:border-gray-500 focus:bg-white focus:outline-none"
             id="grid-last-name"
             type="text"
             value={lastName}
@@ -83,16 +83,16 @@ const ContactForm = (): JSX.Element => {
           />
         </div>
       </div>
-      <div className="flex flex-wrap -mx-3 mb-2">
+      <div className="-mx-3 mb-2 flex flex-wrap">
         <div className="w-full px-3">
           <label
-            className="block uppercase tracking-wide text-black text-xs font-bold mb-2"
+            className="mb-2 block text-xs font-bold uppercase tracking-wide text-black"
             htmlFor="grid-email"
           >
             E-mail
           </label>
           <input
-            className="appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-1 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+            className="mb-1 block w-full appearance-none rounded border border-gray-200 bg-gray-200 py-3 px-4 leading-tight text-black focus:border-gray-500 focus:bg-white focus:outline-none"
             id="grid-email"
             type="email"
             placeholder="Email"
@@ -103,16 +103,16 @@ const ContactForm = (): JSX.Element => {
           />
         </div>
       </div>
-      <div className="flex flex-wrap -mx-3 mb-2">
+      <div className="-mx-3 mb-2 flex flex-wrap">
         <div className="w-full px-3">
           <label
-            className="block uppercase tracking-wide text-black text-xs font-bold mb-2"
+            className="mb-2 block text-xs font-bold uppercase tracking-wide text-black"
             htmlFor="grid-password"
           >
             Message
           </label>
           <textarea
-            className=" no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-1 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none"
+            className=" no-resize mb-1 block h-48 w-full resize-none appearance-none rounded border border-gray-200 bg-gray-200 py-3 px-4 leading-tight text-gray-700 focus:border-gray-500 focus:bg-white focus:outline-none"
             id="message"
             value={message}
             placeholder="Enter Message"
@@ -126,7 +126,7 @@ const ContactForm = (): JSX.Element => {
       <div className="md:flex md:items-center">
         <div className="md:w-1/3">
           <button
-            className="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+            className="focus:shadow-outline rounded bg-teal-400 py-2 px-4 font-bold text-white shadow hover:bg-teal-400 focus:outline-none"
             type="button"
             onClick={(e) => {
               handleSubmit(e);

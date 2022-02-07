@@ -32,38 +32,38 @@ const Navbar = () => {
       variants={variants}
       animate={hidden ? "hidden" : "visible"}
       transition={{ ease: [0.1, 0.25, 0.3, 1], duration: 0.6 }}
-      className="flex justify-around bg-white drop-shadow-sm m-3 rounded-lg left-0 right-0 mx-9 fixed z-10 "
+      className="fixed left-0 right-0 z-10 m-3 mx-9 flex justify-around rounded-lg bg-white drop-shadow-sm "
     >
       <Link href="/">
-        <div className="hover:cursor-pointer fill-black py-2">
+        <div className="fill-black py-2 hover:cursor-pointer">
           {/* <h1 className="text-3xl font-semibold transition duration-150 hover:cursor-pointer">
             MAËLYS CHA
           </h1> */}
           <img src="/logo.png" className="h-16" />
         </div>
       </Link>
-      <div className="space-x-8 flex items-center font-serif">
+      <div className="flex items-center space-x-8 font-serif">
         <a
           href="/"
-          className="hover:text-orange-400 transition duration-150 border-b-2 border-transparent hover:border-orange-400"
+          className="border-b-2 border-transparent transition duration-150 hover:border-orange-400 hover:text-orange-400"
         >
           Home
         </a>
         <a
           href="/illustration"
-          className="hover:text-orange-400 transition duration-150 border-b-2 border-transparent hover:border-orange-400"
+          className="border-b-2 border-transparent transition duration-150 hover:border-orange-400 hover:text-orange-400"
         >
           Illustration
         </a>
         <a
           href="/blog"
-          className="hover:text-orange-400 transition duration-150 border-b-2 border-transparent hover:border-orange-400"
+          className="border-b-2 border-transparent transition duration-150 hover:border-orange-400 hover:text-orange-400"
         >
           Thoughts
         </a>
         <a
           href="/about"
-          className="hover:text-orange-400 transition duration-150 border-b-2 border-transparent hover:border-orange-400"
+          className="border-b-2 border-transparent transition duration-150 hover:border-orange-400 hover:text-orange-400"
         >
           About
         </a>
