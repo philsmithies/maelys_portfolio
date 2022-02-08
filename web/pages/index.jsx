@@ -1,12 +1,13 @@
 import ImageMasonary from "../components/ImageMasonary";
-import Image from "next/image";
 import ContactForm from "../components/ContactForm";
-import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, useViewportScroll } from "framer-motion";
-import { FaArrowCircleUp } from "react-icons/fa";
+import { FaArrowCircleUp, FaArrowCircleDown } from "react-icons/fa";
+import ScrollDownButton from "../components/ScrollDownButton";
 
 const Index = () => {
+  const aboutRef = useRef(null);
+
   const image7 = "/images/portfolio7.jpg";
   const image8 = "/images/portfolio8.jpg";
   const image9 = "/images/portfolio9.jpg";
@@ -58,9 +59,15 @@ const Index = () => {
   return (
     <>
       <div className="flex flex-col">
-        <div className="top-[200px] mx-auto h-screen w-full bg-[url('/images/portfolio8.jpg')] bg-cover" />
-        <div className="mb-20 mt-32 flex h-96 w-full flex-col items-center md:mt-20 md:flex-row md:px-36">
-          <div className="flex h-full w-10/12 flex-col items-center justify-center text-center md:w-3/6">
+        <div className="top-[200px] mx-auto flex h-screen w-full justify-center bg-[url('/images/portfolio8.jpg')] bg-cover">
+          <ScrollDownButton reference={aboutRef} />
+        </div>
+
+        <div
+          ref={aboutRef}
+          className="mx-auto mt-20 flex h-auto w-11/12 flex-col items-center justify-center md:flex-row md:px-36 "
+        >
+          <div className="mx-auto flex h-full max-w-sm flex-col items-center justify-center text-center md:w-3/6">
             <h1 className="text-4xl">About Me</h1>
             <p className="px-5 pt-5 text-base">
               Hi, I’m Maëlys. Lorem ipsum dolor sit amet, consectetur adipiscing
@@ -77,12 +84,12 @@ const Index = () => {
           </div>
         </div>
         <div className="my-40 mx-auto w-full">
-          <div className="mx-auto mt-52 max-w-6xl px-12 md:mt-0">
+          <div className="mx-auto  max-w-6xl px-12 md:mt-0">
             <h1 className="pb-10 text-center text-4xl">My Work</h1>
             <ImageMasonary images={images} />
           </div>
-          <div className="mx-auto flex max-w-4xl flex-col items-center justify-center pt-24 md:flex-row">
-            <div className="mx-auto flex h-60 w-4/12 flex-col justify-between self-start text-center md:mx-0 md:text-left">
+          <div className="mx-auto flex max-w-md flex-col items-center justify-center pt-24 lg:max-w-4xl lg:flex-row">
+            <div className="mx-auto flex h-60 w-6/12 flex-col justify-between self-start text-center lg:w-3/12 lg:text-left">
               <h1 className="pt-5 text-4xl">Get in Touch</h1>
               <div className="mb-20">
                 <a
