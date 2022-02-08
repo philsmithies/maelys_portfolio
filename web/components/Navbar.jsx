@@ -18,6 +18,11 @@ const Navbar = () => {
 
   function toggleMobile() {
     setMobileHidden(!mobileHidden);
+    if (mobileHidden) {
+      document.body.style.overflow = "unset";
+    } else {
+      document.body.style.overflow = "hidden";
+    }
   }
 
   const { scrollY } = useViewportScroll();
@@ -98,7 +103,7 @@ const Navbar = () => {
       </div>
       <div
         // style={{ display: setMobileHidden ? "none" : "block" }}
-        className="hidden items-center space-x-8 font-serif md:flex"
+        className="hidden items-center space-x-8 text-center font-serif md:flex"
       >
         <a
           href="/"

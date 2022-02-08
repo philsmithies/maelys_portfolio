@@ -53,12 +53,12 @@ const Index = () => {
           </div>
         </div>
         <div className="my-40 mx-auto w-full">
-          <div className="mx-auto max-w-6xl">
+          <div className="mx-auto mt-52 max-w-6xl md:mt-0 ">
             <h1 className="pb-10 text-center text-4xl">My Work</h1>
             <HomePageGrid />
           </div>
           <div className="mx-auto flex max-w-4xl flex-col items-center justify-center pt-24 md:flex-row">
-            <div className="mx-auto flex h-60 w-4/12 flex-col justify-between self-start md:mx-0">
+            <div className="mx-auto flex h-60 w-4/12 flex-col justify-between self-start text-center md:mx-0 md:text-left">
               <h1 className="pt-5 text-4xl">Get in Touch</h1>
               <div className="mb-20">
                 <a
