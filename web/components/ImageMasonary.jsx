@@ -57,7 +57,7 @@ const HomePageGrid = ({ images }) => {
         ""
       )}
       <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
-        <Masonry gutter={5}>
+        <Masonry gutter={"5px"}>
           {images.map((image, key) => (
             <img
               className="image-card hover:cursor-pointer hover:opacity-50"
