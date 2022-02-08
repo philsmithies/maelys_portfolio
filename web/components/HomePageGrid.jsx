@@ -1,5 +1,6 @@
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import { useState } from "react";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 const HomePageGrid = () => {
   const [lightboxDisplay, setLightBoxDisplay] = useState(false);
@@ -29,16 +30,52 @@ const HomePageGrid = () => {
     image16,
   ];
 
+  const hideLightBox = () => {
+    document.body.style.overflow = "unset";
+    setLightBoxDisplay(false);
+  };
+
   const showImage = (image) => {
+    document.body.style.overflow = "hidden";
     setImageToShow(image);
     setLightBoxDisplay(true);
+  };
+
+  const showNext = (e) => {
+    e.stopPropagation();
+    let currentIndex = images.indexOf(imageToShow);
+    if (currentIndex >= images.length - 1) {
+      setLightBoxDisplay(false);
+    } else {
+      let nextImage = images[currentIndex + 1];
+      setImageToShow(nextImage);
+    }
+  };
+
+  const showPrev = (e) => {
+    e.stopPropagation();
+    let currentIndex = images.indexOf(imageToShow);
+    if (currentIndex <= 0) {
+      setLightBoxDisplay(false);
+    } else {
+      let nextImage = images[currentIndex - 1];
+      setImageToShow(nextImage);
+    }
   };
 
   return (
     <>
       {lightboxDisplay ? (
-        <div id="lightbox">
-          <img id="lightbox-img" src={imageToShow}></img>
+        <div id="lightbox" onClick={hideLightBox}>
+          <FaArrowLeft
+            className="w-20 hover:cursor-pointer"
+            onClick={showNext}
+          />
+          <img id="lightbox-img" src={imageToShow} className="h-5/6"></img>
+          <FaArrowRight
+            className="w-20 hover:cursor-pointer"
+            onClick={showNext}
+          />
         </div>
       ) : (
         ""
