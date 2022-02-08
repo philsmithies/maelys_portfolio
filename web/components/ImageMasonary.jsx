@@ -2,33 +2,9 @@ import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import { useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
-const HomePageGrid = () => {
+const HomePageGrid = ({ images }) => {
   const [lightboxDisplay, setLightBoxDisplay] = useState(false);
   const [imageToShow, setImageToShow] = useState("");
-
-  const image7 = "/images/portfolio7.jpg";
-  const image8 = "/images/portfolio8.jpg";
-  const image9 = "/images/portfolio9.jpg";
-  const image10 = "/images/portfolio10.jpg";
-  const image11 = "/images/portfolio11.jpg";
-  const image12 = "/images/portfolio12.jpg";
-  const image13 = "/images/portfolio13.jpg";
-  const image14 = "/images/portfolio14.jpg";
-  const image15 = "/images/portfolio15.jpg";
-  const image16 = "/images/portfolio16.jpg";
-
-  const images = [
-    image7,
-    image8,
-    image9,
-    image10,
-    image11,
-    image12,
-    image13,
-    image14,
-    image15,
-    image16,
-  ];
 
   const hideLightBox = () => {
     document.body.style.overflow = "unset";
@@ -80,10 +56,7 @@ const HomePageGrid = () => {
       ) : (
         ""
       )}
-      <ResponsiveMasonry
-        columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}
-        className="px-12"
-      >
+      <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
         <Masonry gutter={5}>
           {images.map((image, key) => (
             <img

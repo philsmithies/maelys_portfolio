@@ -1,4 +1,4 @@
-import HomePageGrid from "../components/HomePageGrid";
+import ImageMasonary from "../components/ImageMasonary";
 import Image from "next/image";
 import ContactForm from "../components/ContactForm";
 import Link from "next/link";
@@ -7,6 +7,30 @@ import { motion, useViewportScroll } from "framer-motion";
 import { FaArrowCircleUp } from "react-icons/fa";
 
 const Index = () => {
+  const image7 = "/images/portfolio7.jpg";
+  const image8 = "/images/portfolio8.jpg";
+  const image9 = "/images/portfolio9.jpg";
+  const image10 = "/images/portfolio10.jpg";
+  const image11 = "/images/portfolio11.jpg";
+  const image12 = "/images/portfolio12.jpg";
+  const image13 = "/images/portfolio13.jpg";
+  const image14 = "/images/portfolio14.jpg";
+  const image15 = "/images/portfolio15.jpg";
+  const image16 = "/images/portfolio16.jpg";
+
+  const images = [
+    image7,
+    image8,
+    image9,
+    image10,
+    image11,
+    image12,
+    image13,
+    image14,
+    image15,
+    image16,
+  ];
+
   const [showScroll, setShowScroll] = useState(false);
   const { scrollY } = useViewportScroll();
 
@@ -53,9 +77,9 @@ const Index = () => {
           </div>
         </div>
         <div className="my-40 mx-auto w-full">
-          <div className="mx-auto mt-52 max-w-6xl md:mt-0 ">
+          <div className="mx-auto mt-52 max-w-6xl px-12 md:mt-0">
             <h1 className="pb-10 text-center text-4xl">My Work</h1>
-            <HomePageGrid />
+            <ImageMasonary images={images} />
           </div>
           <div className="mx-auto flex max-w-4xl flex-col items-center justify-center pt-24 md:flex-row">
             <div className="mx-auto flex h-60 w-4/12 flex-col justify-between self-start text-center md:mx-0 md:text-left">
