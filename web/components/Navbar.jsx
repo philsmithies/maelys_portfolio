@@ -7,6 +7,7 @@ import { FaGripLines, FaRegWindowClose } from "react-icons/fa";
 const Navbar = () => {
   const [hidden, setHidden] = useState(false);
   const [mobileHidden, setMobileHidden] = useState(false);
+  const genericHamburgerLine = `w-6 my-1 bg-black transition ease transform duration-300 mr-2`;
 
   function update() {
     if (scrollY?.current < scrollY?.prev) {
@@ -51,19 +52,43 @@ const Navbar = () => {
             <img src="/logo.png" className="h-12 md:h-16" />
           </div>
         </Link>
-        <FaGripLines
-          className="mr-4 h-6 w-6 cursor-pointer md:hidden"
-          onClick={toggleMobile}
-        />
+        <button
+          className="group flex h-10 w-10 flex-col items-center justify-center md:hidden"
+          onClick={() => setMobileHidden(!mobileHidden)}
+        >
+          <div
+            style={{ height: "2px" }}
+            className={`${genericHamburgerLine} ${
+              mobileHidden
+                ? "translate-y-3 rotate-45 opacity-50 group-hover:opacity-100"
+                : "opacity-50 group-hover:opacity-100"
+            }`}
+          />
+          <div
+            style={{ height: "2px" }}
+            className={`${genericHamburgerLine} ${
+              mobileHidden ? "opacity-0" : "opacity-50 group-hover:opacity-100"
+            }`}
+          />
+          <div
+            style={{ height: "2px" }}
+            className={`${genericHamburgerLine} ${
+              mobileHidden
+                ? "-translate-y-2 -rotate-45 opacity-50 group-hover:opacity-100"
+                : "opacity-50 group-hover:opacity-100"
+            }`}
+          />
+        </button>
       </div>
 
       <div
+        style={{ backgroundColor: "rgba(255, 255, 255, 0.52)" }}
         className={
-          "flex h-screen w-full flex-col items-center justify-center bg-white  transition-all " +
-          (mobileHidden ? "block" : "hidden")
+          "flex h-screen w-full flex-col items-center justify-center transition-all " +
+          (mobileHidden ? "block" : "hidden") +
+          (mobileHidden ? "rotate" : "")
         }
       >
-        {/* <FaRegWindowClose className="absolute top-0 right-0" /> */}
         <div className="h-2/6">
           <ul className="flex h-full flex-col justify-between text-4xl transition-colors ">
             <Link href="/">
@@ -101,10 +126,7 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
-      <div
-        // style={{ display: setMobileHidden ? "none" : "block" }}
-        className="hidden items-center space-x-8 text-center font-serif md:flex"
-      >
+      <div className="hidden items-center space-x-8 text-center font-serif md:flex">
         <a
           href="/"
           className="border-b-2 border-transparent transition duration-150 hover:border-orange-400 hover:text-orange-400"

@@ -20,7 +20,9 @@
     "**/*.ts",
     "**/*.tsx",
     "pages/filteredPosts.jsx",
-    "components/Navbar.jsx"
+    "components/Navbar.tsx",
+    "components/HomePageGrid.jsx",
+    "pages/index.jsx"
   ],
   "exclude": ["node_modules"]
 }
