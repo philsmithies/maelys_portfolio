@@ -40,8 +40,8 @@ const ContactForm = (): JSX.Element => {
   };
 
   return (
-    <form className="mt-5 w-5/6 max-w-lg">
-      <div className="-mx-3 mb-2 flex flex-wrap ">
+    <form className="mx-auto mt-5 w-5/6 max-w-lg md:mx-0">
+      <div className="-mx-3 mb-2 flex flex-wrap">
         <div className="mb-2 flex w-full px-3 md:mb-0">
           <input
             className="mb-1 mr-2 w-full appearance-none border border-orange-200 py-3 px-4 leading-tight text-black focus:border-gray-500 focus:bg-white focus:outline-none"
@@ -80,7 +80,7 @@ const ContactForm = (): JSX.Element => {
           ></textarea>
         </div>
       </div>
-      <div className="md:flex md:items-center">
+      <div className="flex items-center justify-center md:justify-start">
         <div className="md:w-1/3">
           <button
             className="w-28 rounded-sm border border-orange-200 py-3 px-4 text-xs font-thin text-orange-400 shadow transition-colors hover:bg-orange-400 hover:text-white "

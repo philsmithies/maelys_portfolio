@@ -6,12 +6,18 @@ import Image from "next/image";
 const About = (): JSX.Element => {
   return (
     <>
-      <div className="mx-auto flex justify-center pt-48 text-white">
+      <div className="mx-auto flex flex-col items-center justify-center pt-24 text-white md:flex-row md:pt-48">
         <div>
-          <img src="/images/aboutme.jpeg" alt="about me" className="w-96" />
+          <img
+            src="/images/aboutme.jpeg"
+            alt="about me"
+            className="mb-10 w-96"
+          />
         </div>
-        <div className="ml-10 flex max-w-sm flex-col">
-          <h1 className="pb-3 text-4xl text-black">Maelys Cha Cha</h1>
+        <div className="flex max-w-sm flex-col md:ml-10">
+          <h1 className="pb-3 text-center text-4xl text-black md:text-left">
+            Maelys Cha Cha
+          </h1>
           <p className="text-black">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium
             nibh a felis porta, vitae faucibus mi varius. Proin ornare lobortis
@@ -32,14 +38,16 @@ const About = (): JSX.Element => {
           </p>
         </div>
       </div>
-      <div className="mx-auto flex max-w-4xl items-center justify-center py-24">
-        <div className="flex h-60 w-4/12 flex-col justify-between self-start">
-          <h1 className="pt-5 text-4xl">Get in Touch</h1>
-          <div className="mb-20">
+      <div className="mx-auto flex max-w-4xl flex-col py-24 md:flex-row">
+        <div className="mx-auto flex h-60 w-4/12 flex-col justify-between self-start">
+          <h1 className="pt-5 text-center text-4xl md:text-left">
+            Get in Touch
+          </h1>
+          <div className="text-center md:mb-20 md:text-left">
             <p className="mb-3 text-lg">maelyschay@gmail.com</p>
             <p className="text-lg">France</p>
           </div>
-          <div className="flex">
+          <div className="flex justify-center pb-10 md:justify-start">
             <div className="mr-2">
               <Link href="mailto:greencatmoon@gmail.com">
                 <Image
@@ -50,7 +58,7 @@ const About = (): JSX.Element => {
                 />
               </Link>
             </div>
-            <div className="mr-2">
+            <div className="md:mr-2">
               <Link href="https://www.instagram.com/maelyschay">
                 <Image
                   src="/icons/instagram.svg"
@@ -62,7 +70,7 @@ const About = (): JSX.Element => {
             </div>
           </div>
         </div>
-        <div id="contact">
+        <div id="contact" className="mx-auto max-w-md">
           <ContactForm />
         </div>
       </div>
