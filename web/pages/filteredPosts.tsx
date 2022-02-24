@@ -7,7 +7,9 @@ interface Posts {
   posts: {
     _id: string;
     title: string;
-    slug: string;
+    slug: {
+      current: string;
+    };
     _createdAt: string;
   }[];
 }
@@ -18,7 +20,7 @@ const FilteredPosts: NextPage<Posts> = ({ posts }) => {
       <h1>Welcome to a blog!</h1>
       {posts.length > 0 &&
         posts.map(
-          ({ _id, title = "", slug = "", _createdAt = "" }) =>
+          ({ _id, title, slug, _createdAt }) =>
             slug && (
               <li key={_id}>
                 <Link href="/post/[slug]" as={`/post/${slug.current}`}>

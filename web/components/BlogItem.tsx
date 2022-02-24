@@ -14,13 +14,16 @@ function previewText(body: string) {
 interface BlogItem {
   title: string;
   publishedAt: string | null;
-  body: string;
+  body: {
+    children: {
+      text: string;
+    };
+  }[];
   slug: {
     current: string;
   };
   mainImage: {
     alt: string;
-    url: string;
   };
   categories: string | null;
 }

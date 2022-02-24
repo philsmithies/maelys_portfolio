@@ -1,8 +1,14 @@
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
+
 import { useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
-const HomePageGrid = ({ images }): JSX.Element => {
+interface ImageProps {
+  images: string[];
+}
+
+const HomePageGrid = ({ images }: ImageProps): JSX.Element => {
+  console.log("the images are ", images);
   const [lightboxDisplay, setLightBoxDisplay] = useState(false);
   const [imageToShow, setImageToShow] = useState("");
 
@@ -11,7 +17,7 @@ const HomePageGrid = ({ images }): JSX.Element => {
     setLightBoxDisplay(false);
   };
 
-  const showImage = (image) => {
+  const showImage = (image: string) => {
     document.body.style.overflow = "hidden";
     setImageToShow(image);
     setLightBoxDisplay(true);
@@ -45,12 +51,12 @@ const HomePageGrid = ({ images }): JSX.Element => {
         <div id="lightbox" onClick={hideLightBox}>
           <FaArrowLeft
             className="w-20 hover:cursor-pointer"
-            onClick={showNext}
+            onClick={() => showNext}
           />
           <img id="lightbox-img" src={imageToShow} className="h-5/6"></img>
           <FaArrowRight
             className="w-20 hover:cursor-pointer"
-            onClick={showNext}
+            onClick={() => showNext}
           />
         </div>
       ) : (

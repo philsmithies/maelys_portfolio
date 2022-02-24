@@ -11,7 +11,8 @@ function urlFor(source: string) {
 }
 
 const ImageComponent = ({ value, isInline }) => {
-  const { width, height } = getImageDimensions(value);
+  // const { width, height } = getImageDimensions(value);
+  // const ratio = width / height;
   return (
     <img
       src={urlFor(value).image(value).fit("fill").auto("format").url()}
@@ -19,7 +20,7 @@ const ImageComponent = ({ value, isInline }) => {
       loading="lazy"
       style={{
         padding: "2em",
-        aspectRatio: width / height,
+        // aspectRatio: auto,
       }}
     />
   );

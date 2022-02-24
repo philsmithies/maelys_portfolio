@@ -4,7 +4,28 @@ import client from "../client";
 import BlogItem from "../components/BlogItem";
 import { NextPage } from "next/types";
 import { ReactNode } from "react";
-import Posts from "./types";
+
+interface Posts {
+  posts: {
+    author: {
+      name: string;
+    };
+    _id: string;
+    title: string;
+    slug: {
+      current: string;
+    };
+    _createdAt: string;
+    publishedAt: string | null;
+    body: {
+      children: {
+        text: string;
+      };
+    }[];
+    mainImage: string;
+    categories: string | null;
+  }[];
+}
 
 const Blog: NextPage<Posts> = ({ posts }) => {
   return (
@@ -16,13 +37,13 @@ const Blog: NextPage<Posts> = ({ posts }) => {
             posts.map(
               ({
                 _id,
-                title = "",
-                slug = "",
-                publishedAt = "",
-                author = "",
-                body = "",
-                mainImage = "",
-                categories = "",
+                title,
+                slug,
+                publishedAt,
+                author,
+                body,
+                mainImage,
+                categories,
               }) =>
                 slug && (
                   <BlogItem

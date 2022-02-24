@@ -1,12 +1,18 @@
 export default interface Posts {
   posts: {
     _id: string;
-    title: string;
-    slug: string;
     _createdAt: string;
-    publishedAt: string | null;
     author: string | null;
-    body: string | null;
+    title: string;
+    publishedAt: string | null;
+    body: {
+      children: {
+        text: string;
+      };
+    }[];
+    slug: {
+      current: string;
+    };
     mainImage: string | null;
     categories: string | null;
   }[];
