@@ -14,9 +14,14 @@ function previewText(body: string) {
 interface BlogItem {
   title: string;
   publishedAt: string | null;
-  body: string | null;
-  slug: string;
-  mainImage: string | null;
+  body: string;
+  slug: {
+    current: string;
+  };
+  mainImage: {
+    alt: string;
+    url: string;
+  };
   categories: string | null;
 }
 

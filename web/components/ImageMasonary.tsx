@@ -17,7 +17,7 @@ const HomePageGrid = ({ images }): JSX.Element => {
     setLightBoxDisplay(true);
   };
 
-  const showNext = (e) => {
+  const showNext = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.stopPropagation();
     let currentIndex = images.indexOf(imageToShow);
     if (currentIndex >= images.length - 1) {
@@ -28,7 +28,7 @@ const HomePageGrid = ({ images }): JSX.Element => {
     }
   };
 
-  const showPrev = (e) => {
+  const showPrev = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.stopPropagation();
     let currentIndex = images.indexOf(imageToShow);
     if (currentIndex <= 0) {
