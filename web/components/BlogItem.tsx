@@ -13,6 +13,9 @@ function previewText(body: string) {
 
 interface BlogItem {
   title: string;
+  author: {
+    name: string;
+  };
   publishedAt: string | null;
   body: {
     children: {
@@ -24,12 +27,14 @@ interface BlogItem {
   };
   mainImage: {
     alt: string;
+    src: string;
   };
   categories: string | null;
 }
 
 const BlogItem = ({
   title,
+  author,
   publishedAt,
   body,
   slug,
@@ -41,13 +46,15 @@ const BlogItem = ({
       <div className="border-1 m-2 flex max-w-md flex-col rounded-lg border-slate-400 bg-white p-10 transition-all hover:cursor-pointer hover:bg-gray-100 hover:drop-shadow-md sm:w-10/12 md:w-8/12 ">
         {mainImage && (
           <img
-            src={urlFor(mainImage).image(mainImage).url()}
+            src={urlFor(mainImage.src).image(mainImage).url()}
             alt={mainImage.alt || " "}
             className="mb-6 h-52 w-full object-cover"
           />
         )}
         <h1 className="text-3xl">{title}</h1>
-        <p className="text-sm">{`${previewText(body)}...`}</p>
+        <p className="text-sm">{`${previewText(
+          body[0].children[0].text
+        )}...`}</p>
         {/* {categories && (
           <ul className="flex text-gray-400 pb-36">
             {categories.map((category) => (

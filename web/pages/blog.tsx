@@ -19,10 +19,13 @@ interface Posts {
     publishedAt: string | null;
     body: {
       children: {
-        text: string;
+        text: string | null;
       };
     }[];
-    mainImage: string;
+    mainImage: {
+      alt: string;
+      src: string;
+    };
     categories: string | null;
   }[];
 }
@@ -49,7 +52,8 @@ const Blog: NextPage<Posts> = ({ posts }) => {
                   <BlogItem
                     body={body[0].children[0].text}
                     key={_id}
-                    author={author.name}
+                    categories={categories}
+                    author={author}
                     title={title}
                     slug={slug}
                     publishedAt={publishedAt}
