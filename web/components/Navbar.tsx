@@ -1,13 +1,26 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, useViewportScroll } from "framer-motion";
+import { motion, useViewportScroll, useMotionValue } from "framer-motion";
 import { FaGripLines, FaRegWindowClose } from "react-icons/fa";
 
 const Navbar = (): JSX.Element => {
   const [hidden, setHidden] = useState(false);
   const [mobileHidden, setMobileHidden] = useState(false);
   const genericHamburgerLine = `w-6 my-1 bg-black transition ease transform duration-300 mr-2`;
+
+  const { scrollY } = useViewportScroll();
+
+  useEffect(() => {
+    return scrollY.onChange(() => update());
+  });
+
+  const variants = {
+    /** this is the "visible" key and it's respective style object **/
+    visible: { opacity: 1, y: 0 },
+    /** this is the "hidden" key and it's respective style object **/
+    hidden: { opacity: 0, y: -25 },
+  };
 
   function update() {
     if (scrollY?.current < scrollY?.prev) {
@@ -25,19 +38,6 @@ const Navbar = (): JSX.Element => {
       document.body.style.overflow = "hidden";
     }
   }
-
-  const { scrollY } = useViewportScroll();
-
-  useEffect(() => {
-    return scrollY.onChange(() => update());
-  });
-
-  const variants = {
-    /** this is the "visible" key and it's respective style object **/
-    visible: { opacity: 1, y: 0 },
-    /** this is the "hidden" key and it's respective style object **/
-    hidden: { opacity: 0, y: -25 },
-  };
 
   return (
     <motion.nav

@@ -1,34 +1,8 @@
-import Link from "next/link";
 import groq from "groq";
 import client from "../client";
 import BlogItem from "../components/BlogItem";
 import { NextPage } from "next/types";
-import { ReactNode } from "react";
-
-interface Posts {
-  posts: {
-    author: {
-      name: string;
-    };
-    _id: string;
-    title: string;
-    slug: {
-      current: string;
-    };
-    _createdAt: string;
-    publishedAt: string | null;
-    body: {
-      children: {
-        text: string | null;
-      };
-    }[];
-    mainImage: {
-      alt: string;
-      src: string;
-    };
-    categories: string | null;
-  }[];
-}
+import Posts from "./types";
 
 const Blog: NextPage<Posts> = ({ posts }) => {
   return (
@@ -50,7 +24,7 @@ const Blog: NextPage<Posts> = ({ posts }) => {
               }) =>
                 slug && (
                   <BlogItem
-                    body={body[0].children[0].text}
+                    body={body}
                     key={_id}
                     categories={categories}
                     author={author}

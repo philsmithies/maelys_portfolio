@@ -20,8 +20,8 @@ interface BlogItem {
   body: {
     children: {
       text: string;
-    };
-  }[];
+    } | null;
+  };
   slug: {
     current: string;
   };
