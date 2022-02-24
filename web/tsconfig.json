@@ -1,15 +1,15 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "module": "esnext",
+    "target": "ES2019",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": false,
+    "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "incremental": true,
     "esModuleInterop": true,
-    "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
@@ -19,10 +19,11 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "pages/filteredPosts.jsx",
+    "pages/filteredPosts.tsx",
     "components/Navbar.tsx",
     "components/HomePageGrid.jsx",
-    "pages/index.jsx"
+    "pages/index.tsx",
+    "pages/api/contact.js"
   ],
   "exclude": ["node_modules"]
 }

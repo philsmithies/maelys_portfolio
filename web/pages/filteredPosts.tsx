@@ -1,9 +1,18 @@
 import Link from "next/link";
 import groq from "groq";
 import client from "../client";
+import { NextPage } from "next/types";
 
-const FilteredPosts = ({ posts }) => {
-  console.log(posts[0]);
+interface Posts {
+  posts: {
+    _id: string;
+    title: string;
+    slug: string;
+    _createdAt: string;
+  }[];
+}
+
+const FilteredPosts: NextPage<Posts> = ({ posts }) => {
   return (
     <div>
       <h1>Welcome to a blog!</h1>

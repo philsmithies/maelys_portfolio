@@ -1,4 +1,4 @@
-const GetInTouch = () => {
+const GetInTouch = (): JSX.Element => {
   return (
     <div className="mx-auto flex h-60 w-6/12 flex-col justify-between self-start text-center lg:w-3/12 lg:text-left">
       <h1 className="pt-5 text-4xl">Get in Touch</h1>

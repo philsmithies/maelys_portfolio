@@ -1,4 +1,4 @@
-const AboutMe = () => {
+const AboutMe = (): JSX.Element => {
   return (
     <div className="mx-auto mt-20 flex h-auto w-11/12 flex-col items-center justify-center md:flex-row md:px-36 ">
       <div className="mx-auto flex h-full max-w-sm flex-col items-center justify-center text-center md:w-3/6">

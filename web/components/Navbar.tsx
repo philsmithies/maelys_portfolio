@@ -4,7 +4,7 @@ import Link from "next/link";
 import { motion, useViewportScroll } from "framer-motion";
 import { FaGripLines, FaRegWindowClose } from "react-icons/fa";
 
-const Navbar = () => {
+const Navbar = (): JSX.Element => {
   const [hidden, setHidden] = useState(false);
   const [mobileHidden, setMobileHidden] = useState(false);
   const genericHamburgerLine = `w-6 my-1 bg-black transition ease transform duration-300 mr-2`;

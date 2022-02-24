@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, useViewportScroll } from "framer-motion";
 import { FaArrowCircleUp } from "react-icons/fa";
 
-const ScrollTopButton = () => {
+const ScrollTopButton = (): JSX.Element => {
   const [showScroll, setShowScroll] = useState(false);
   const { scrollY } = useViewportScroll();
 

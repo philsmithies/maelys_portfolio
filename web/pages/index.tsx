@@ -5,10 +5,10 @@ import ScrollTopButton from "../components/ScrollTopButton";
 import AboutMe from "../components/Index/AboutMe";
 import MyWork from "../components/Index/MyWork";
 import GetInTouch from "../components/Index/GetInTouch";
+import { NextPage } from "next/types";
 
-const Index = () => {
+const Index: NextPage = () => {
   const aboutRef = useRef(null);
-
   return (
     <>
       <div className="flex flex-col">

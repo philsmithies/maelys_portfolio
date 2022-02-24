@@ -2,7 +2,7 @@ import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import { useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
-const HomePageGrid = ({ images }) => {
+const HomePageGrid = ({ images }): JSX.Element => {
   const [lightboxDisplay, setLightBoxDisplay] = useState(false);
   const [imageToShow, setImageToShow] = useState("");
 

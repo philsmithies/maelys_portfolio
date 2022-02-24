@@ -1,11 +1,16 @@
 import ContactForm from "../components/ContactForm";
 import SocialsBar from "../components/SocialsBar";
 import Link from "next/link";
+import Head from "next/head";
 import Image from "next/image";
+import type { NextPage } from "next";
 
-const About = (): JSX.Element => {
+const About: NextPage = () => {
   return (
     <>
+      <Head>
+        <title>About Me</title>
+      </Head>
       <div className="mx-auto flex flex-col items-center justify-center pt-24 text-white md:flex-row md:pt-48">
         <div>
           <img

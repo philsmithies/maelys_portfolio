@@ -3,12 +3,21 @@ import Link from "next/link";
 import imageUrlBuilder from "@sanity/image-url";
 import client from "../client";
 
-function urlFor(source) {
+function urlFor(source: string) {
   return imageUrlBuilder(client).image(source);
 }
 
-function previewText(body) {
+function previewText(body: string) {
   return body.substring(0, 200);
+}
+
+interface BlogItem {
+  title: string;
+  publishedAt: string | null;
+  body: string | null;
+  slug: string;
+  mainImage: string | null;
+  categories: string | null;
 }
 
 const BlogItem = ({
@@ -18,7 +27,7 @@ const BlogItem = ({
   slug,
   mainImage,
   categories,
-}) => {
+}: BlogItem): JSX.Element => {
   return (
     <Link href="/post/[slug]" as={`/post/${slug.current}`}>
       <div className="border-1 m-2 flex max-w-md flex-col rounded-lg border-slate-400 bg-white p-10 transition-all hover:cursor-pointer hover:bg-gray-100 hover:drop-shadow-md sm:w-10/12 md:w-8/12 ">

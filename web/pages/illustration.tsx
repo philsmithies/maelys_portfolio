@@ -1,6 +1,7 @@
+import { NextPage } from "next/types";
 import ImageMasonary from "../components/ImageMasonary";
 
-const Illustration = (): JSX.Element => {
+const Illustration: NextPage = () => {
   const image7 = "/images/portfolio7.jpg";
   const image8 = "/images/portfolio8.jpg";
   const image9 = "/images/portfolio9.jpg";

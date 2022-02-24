@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FaArrowCircleDown } from "react-icons/fa";
 
-const ScrollButton = ({ reference }) => {
+const ScrollButton = ({ reference }): JSX.Element => {
   const [scrollButtonVisible, setScrollButtonVisible] = useState(true);
 
   const executeScroll = () => {

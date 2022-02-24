@@ -2,8 +2,11 @@ import Link from "next/link";
 import groq from "groq";
 import client from "../client";
 import BlogItem from "../components/BlogItem";
+import { NextPage } from "next/types";
+import { ReactNode } from "react";
+import Posts from "./types";
 
-const Blog = ({ posts }) => {
+const Blog: NextPage<Posts> = ({ posts }) => {
   return (
     <div className="mx-auto flex h-screen max-w-4xl flex-col items-center">
       <div className="mt-32 h-5/6 w-full rounded-xl">

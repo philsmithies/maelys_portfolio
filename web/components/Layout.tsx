@@ -1,8 +1,12 @@
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import Head from "next/head";
+import { ReactChildren, ReactChild } from "react";
+interface LayoutProps {
+  children: ReactChild | ReactChildren;
+}
 
-const Layout = ({ children }) => {
+const Layout = ({ children }: LayoutProps): JSX.Element => {
   return (
     <>
       <Head>

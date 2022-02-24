@@ -6,7 +6,7 @@ import Link from "next/link";
 import { PortableText } from "@portabletext/react";
 import { getImageDimensions } from "@sanity/asset-utils";
 
-function urlFor(source) {
+function urlFor(source: string) {
   return imageUrlBuilder(client).image(source);
 }
 

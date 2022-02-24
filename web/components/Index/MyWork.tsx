@@ -1,6 +1,6 @@
 import ImageMasonary from "../ImageMasonary";
 
-const MyWork = () => {
+const MyWork = (): JSX.Element => {
   const image7 = "/images/portfolio7.jpg";
   const image8 = "/images/portfolio8.jpg";
   const image9 = "/images/portfolio9.jpg";
