@@ -36,7 +36,7 @@ const Index: NextPage = ({ gallery }) => {
 
 export async function getStaticProps() {
   const gallery = await client.fetch(groq`
-      *[_type == "gallery"]
+      *[_type == "gallery" && title == 'Home']
     `);
 
   // By returning { props: { posts } }, the Blog component

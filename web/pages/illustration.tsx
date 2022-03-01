@@ -1,7 +1,9 @@
 import { NextPage } from "next/types";
 import ImageMasonary from "../components/ImageMasonary";
+import groq from "groq";
+import client from "../client";
 
-const Illustration: NextPage = () => {
+const Illustration: NextPage = ({ gallery }) => {
   const image7 = "/images/portfolio7.jpg";
   const image8 = "/images/portfolio8.jpg";
   const image9 = "/images/portfolio9.jpg";
@@ -37,10 +39,24 @@ const Illustration: NextPage = () => {
         </p>
       </div>
       <div className="z-0 pt-24 pb-24">
-        <ImageMasonary images={images} />
+        <ImageMasonary images={gallery} />
       </div>
     </>
   );
 };
+
+export async function getStaticProps() {
+  const gallery = await client.fetch(groq`
+      *[_type == "gallery" && title == 'Illustration']
+    `);
+
+  // By returning { props: { posts } }, the Blog component
+  // will receive `posts` as a prop at build time
+  return {
+    props: {
+      gallery,
+    },
+  };
+}
 
 export default Illustration;
