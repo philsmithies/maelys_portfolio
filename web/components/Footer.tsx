@@ -30,9 +30,9 @@ const Footer = (): JSX.Element => {
           </a>
         </div>
         <SocialsBar />
-        <img src="/images/footerlogo.png" className="mb-5 h-20" />
+        <img src="/images/footerlogo.png" className="mb-5 h-14" />
         <p className="mx-auto font-serif text-sm text-gray-600">
-          Maëlys Chavernac &copy; 2022
+          Maëlys Chay &copy; 2022 ☺
         </p>
       </div>
     </footer>

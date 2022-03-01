@@ -20,7 +20,12 @@ const About: NextPage = () => {
           />
         </div>
         <div className="flex max-w-sm flex-col md:ml-10">
-          <h1 className="pb-3 text-center text-4xl text-black md:text-left">
+          <img
+            src="/images/star.svg"
+            alt="about me"
+            className="absolute -z-10 w-40 self-end"
+          />
+          <h1 className="font-syne pb-3 text-center text-4xl font-semibold text-black md:text-left">
             Maelys Cha Cha
           </h1>
           <p className="text-black">

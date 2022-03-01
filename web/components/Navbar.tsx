@@ -49,7 +49,7 @@ const Navbar = (): JSX.Element => {
       <div className="flex w-full items-center justify-between md:w-4/12">
         <Link href="/">
           <div className="ml-4 fill-black py-2 hover:cursor-pointer">
-            <img src="/logo.png" className="h-12 md:h-16" />
+            <img src="/images/logonew.png" className="w-2/5" />
           </div>
         </Link>
         <button
@@ -107,14 +107,14 @@ const Navbar = (): JSX.Element => {
                 Illustration
               </li>
             </Link>
-            <Link href="/blog">
+            {/* <Link href="/blog">
               <li
                 className="hover:cursor-pointer hover:text-orange-400"
                 onClick={toggleMobile}
               >
                 Thoughts
               </li>
-            </Link>
+            </Link> */}
             <Link href="/about">
               <li
                 className="hover:cursor-pointer hover:text-orange-400"
@@ -134,7 +134,7 @@ const Navbar = (): JSX.Element => {
           </ul>
         </div>
       </div>
-      <div className="font-syne hidden items-center space-x-6 text-center font-extrabold md:flex">
+      <div className="font-syne hidden items-center space-x-6 text-center font-bold md:flex">
         <a
           href="/"
           className="border-b-2 border-transparent transition duration-150 hover:border-orange-400 hover:text-orange-400"
@@ -147,12 +147,12 @@ const Navbar = (): JSX.Element => {
         >
           Illustration
         </a>
-        <a
+        {/* <a
           href="/blog"
           className="border-b-2 border-transparent transition duration-150 hover:border-orange-400 hover:text-orange-400"
         >
           Thoughts
-        </a>
+        </a> */}
         <a
           href="/about"
           className="border-b-2 border-transparent transition duration-150 hover:border-orange-400 hover:text-orange-400"

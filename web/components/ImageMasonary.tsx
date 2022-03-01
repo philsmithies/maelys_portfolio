@@ -78,7 +78,7 @@ const HomePageGrid = ({ images: images }: ImageProps): JSX.Element => {
               className="image-card hover:cursor-pointer hover:opacity-50"
               onClick={() => showImage(image)}
               // src={image}
-              src={urlFor(image).width(400).url()}
+              src={urlFor(image).width(800).url()}
               key={key}
             />
           ))}

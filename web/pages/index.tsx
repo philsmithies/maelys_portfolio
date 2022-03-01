@@ -15,7 +15,7 @@ const Index: NextPage = ({ gallery }) => {
   return (
     <>
       <div className="flex flex-col">
-        <div className="top-[200px] mx-auto flex h-screen w-full justify-center bg-[url('/images/portfolio8.jpg')] bg-cover">
+        <div className="top-[200px] mx-auto flex h-screen w-full justify-center bg-[url('/images/homepage2.jpg')] bg-cover">
           <ScrollDownButton reference={aboutRef} />
         </div>
         <div ref={aboutRef}>
