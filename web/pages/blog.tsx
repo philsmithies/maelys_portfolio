@@ -5,6 +5,7 @@ import { NextPage } from "next/types";
 import Posts from "./types";
 
 const Blog: NextPage<Posts> = ({ posts }) => {
+  console.log("the posts is", posts);
   return (
     <div className="mx-auto flex h-screen max-w-4xl flex-col items-center">
       <div className="mt-32 h-5/6 w-full rounded-xl">

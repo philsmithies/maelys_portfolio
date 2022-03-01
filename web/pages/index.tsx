@@ -6,8 +6,11 @@ import AboutMe from "../components/Index/AboutMe";
 import MyWork from "../components/Index/MyWork";
 import GetInTouch from "../components/Index/GetInTouch";
 import { NextPage } from "next/types";
+import client from "../client";
+import groq from "groq";
+import Posts from "./types";
 
-const Index: NextPage = () => {
+const Index: NextPage = ({ gallery }) => {
   const aboutRef = useRef(null);
   return (
     <>
@@ -19,7 +22,7 @@ const Index: NextPage = () => {
           <AboutMe />
         </div>
         <div className="my-40 mx-auto w-full">
-          <MyWork />
+          <MyWork gallery={gallery} />
           <div className="mx-auto flex max-w-md flex-col items-center justify-center pt-24 lg:max-w-4xl lg:flex-row">
             <GetInTouch />
             <ContactForm />
@@ -30,5 +33,19 @@ const Index: NextPage = () => {
     </>
   );
 };
+
+export async function getStaticProps() {
+  const gallery = await client.fetch(groq`
+      *[_type == "gallery"]
+    `);
+
+  // By returning { props: { posts } }, the Blog component
+  // will receive `posts` as a prop at build time
+  return {
+    props: {
+      gallery,
+    },
+  };
+}
 
 export default Index;

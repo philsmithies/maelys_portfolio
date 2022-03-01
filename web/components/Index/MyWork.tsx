@@ -1,6 +1,8 @@
 import ImageMasonary from "../ImageMasonary";
+import client from "../../client";
+import groq from "groq";
 
-const MyWork = (): JSX.Element => {
+const MyWork = ({ gallery }): JSX.Element => {
   const image7 = "/images/portfolio7.jpg";
   const image8 = "/images/portfolio8.jpg";
   const image9 = "/images/portfolio9.jpg";
@@ -28,7 +30,7 @@ const MyWork = (): JSX.Element => {
   return (
     <div className="mx-auto max-w-6xl px-12 md:mt-0">
       <h1 className="pb-10 text-center text-4xl">My Work</h1>
-      <ImageMasonary images={images} />
+      <ImageMasonary images={gallery} />
     </div>
   );
 };
