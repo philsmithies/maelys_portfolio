@@ -44,7 +44,7 @@ const Navbar = (): JSX.Element => {
       variants={variants}
       animate={hidden ? "hidden" : "visible"}
       transition={{ ease: [0.1, 0.25, 0.3, 1], duration: 0.6 }}
-      className="fixed left-0 right-0 z-10 flex flex-col items-center justify-around bg-white drop-shadow-sm md:m-3 md:mx-9 md:flex-row md:rounded-lg "
+      className=" fixed left-0 right-0 z-10 flex flex-col items-center justify-around bg-white drop-shadow-sm md:m-3 md:mx-9 md:flex-row md:rounded-lg"
     >
       <div className="flex w-full items-center justify-between md:w-4/12">
         <Link href="/">
@@ -90,7 +90,7 @@ const Navbar = (): JSX.Element => {
         }
       >
         <div className="h-2/6">
-          <ul className="flex h-full flex-col justify-between text-4xl transition-colors ">
+          <ul className="font-syne flex h-full flex-col justify-between text-4xl font-extrabold transition-colors">
             <Link href="/">
               <li
                 className="hover:cursor-pointer hover:text-orange-400"
@@ -123,10 +123,18 @@ const Navbar = (): JSX.Element => {
                 About
               </li>
             </Link>
+            <Link href="/about">
+              <li
+                className="hover:cursor-pointer hover:text-orange-400"
+                onClick={toggleMobile}
+              >
+                Contact
+              </li>
+            </Link>
           </ul>
         </div>
       </div>
-      <div className="hidden items-center space-x-8 text-center font-serif md:flex">
+      <div className="font-syne hidden items-center space-x-6 text-center font-extrabold md:flex">
         <a
           href="/"
           className="border-b-2 border-transparent transition duration-150 hover:border-orange-400 hover:text-orange-400"
@@ -150,6 +158,12 @@ const Navbar = (): JSX.Element => {
           className="border-b-2 border-transparent transition duration-150 hover:border-orange-400 hover:text-orange-400"
         >
           About
+        </a>
+        <a
+          href="/contact"
+          className="border-b-2 border-transparent transition duration-150 hover:border-orange-400 hover:text-orange-400"
+        >
+          Contact
         </a>
         {/* <a href="" className="hover:text-orange-400">
           Shop

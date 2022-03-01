@@ -8,7 +8,9 @@ module.exports = {
     margin: ["responsive", "hover", "first"],
   },
   theme: {
-    extend: {},
+    fontFamily: {
+      syne: ["Syne", "courier"],
+    },
   },
   plugins: [],
 };

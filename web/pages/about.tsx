@@ -11,7 +11,7 @@ const About: NextPage = () => {
       <Head>
         <title>About Me</title>
       </Head>
-      <div className="mx-auto flex flex-col items-center justify-center pt-24 text-white md:flex-row md:pt-48">
+      <div className="mx-auto flex h-screen flex-col items-center justify-center text-white md:flex-row ">
         <div>
           <img
             src="/images/aboutme.jpeg"
@@ -41,42 +41,6 @@ const About: NextPage = () => {
             vulputate. Sed vitae fringilla odio, in semper metus. Aliquam
             suscipit turpis id dolor vulputate, nec blandit dui lacinia.
           </p>
-        </div>
-      </div>
-      <div className="mx-auto flex max-w-4xl flex-col py-24 md:flex-row">
-        <div className="mx-auto flex h-60 w-4/12 flex-col justify-between self-start">
-          <h1 className="pt-5 text-center text-4xl md:text-left">
-            Get in Touch
-          </h1>
-          <div className="text-center md:mb-20 md:text-left">
-            <p className="mb-3 text-lg">maelyschay@gmail.com</p>
-            <p className="text-lg">France</p>
-          </div>
-          <div className="flex justify-center pb-10 md:justify-start">
-            <div className="mr-2">
-              <Link href="mailto:greencatmoon@gmail.com">
-                <Image
-                  src="/icons/email.svg"
-                  className="hover:cursor-pointer"
-                  height={18}
-                  width={18}
-                />
-              </Link>
-            </div>
-            <div className="md:mr-2">
-              <Link href="https://www.instagram.com/maelyschay">
-                <Image
-                  src="/icons/instagram.svg"
-                  className="hover:cursor-pointer"
-                  height={18}
-                  width={18}
-                />
-              </Link>
-            </div>
-          </div>
-        </div>
-        <div id="contact" className="mx-auto max-w-md">
-          <ContactForm />
         </div>
       </div>
     </>
