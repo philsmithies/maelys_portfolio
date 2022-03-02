@@ -40,7 +40,7 @@ const ContactForm = (): JSX.Element => {
   };
 
   return (
-    <form className="mx-auto mt-5 w-5/6 max-w-lg lg:mx-0">
+    <form className="mx-auto mt-5 w-5/6 lg:mx-0">
       <div className="-mx-3 mb-2 flex flex-wrap">
         <div className="mb-2 flex w-full px-3 lg:mb-0">
           <input
@@ -55,7 +55,7 @@ const ContactForm = (): JSX.Element => {
             required
           />
           <input
-            className="mb-1 w-full appearance-none border border-orange-200 py-3 px-4 leading-tight text-black focus:border-gray-500 focus:bg-white focus:outline-none"
+            className="mb-1 w-full appearance-none border border-orange-200 py-3 px-4 leading-tight text-gray-700 focus:border-gray-500 focus:bg-white focus:outline-none"
             id="grid-email"
             type="email"
             placeholder="Email"
@@ -69,7 +69,7 @@ const ContactForm = (): JSX.Element => {
       <div className="-mx-3 mb-2 flex flex-wrap">
         <div className="w-full px-3">
           <textarea
-            className=" no-resize mb-1 block h-48 w-full resize-none appearance-none border border-orange-200 py-3 px-4 leading-tight text-gray-700 focus:border-gray-500 focus:bg-white focus:outline-none"
+            className="no-resize mb-1 block h-48 w-full resize-none appearance-none border border-orange-200 py-3 px-4 leading-tight text-gray-700 focus:border-gray-500 focus:bg-white focus:outline-none"
             id="message"
             value={message}
             placeholder="Message"
@@ -80,16 +80,14 @@ const ContactForm = (): JSX.Element => {
           ></textarea>
         </div>
       </div>
-      <div className="flex items-center justify-center lg:justify-start">
-        <div className="lg:w-1/3">
-          <button
-            className="w-28 rounded-sm border border-orange-200 py-3 px-4 text-xs font-thin text-orange-400 shadow transition-colors hover:bg-orange-400 hover:text-white "
-            type="button"
-            onClick={() => handleSubmit}
-          >
-            Submit
-          </button>
-        </div>
+      <div className="flex items-center justify-center md:justify-end">
+        <button
+          className="w-28 rounded-sm border border-orange-200 py-3 px-4 text-xs font-thin text-orange-400 shadow transition-colors hover:bg-orange-400 hover:text-white "
+          type="button"
+          onClick={() => handleSubmit}
+        >
+          Submit
+        </button>
         {submitted && (
           <div className="mt-2">
             <p className="font-gray-700">Thankyou!</p>

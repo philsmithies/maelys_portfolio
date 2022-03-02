@@ -4,6 +4,8 @@ import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
 import type { NextPage } from "next";
+import groq from "groq";
+import client from "../client";
 
 const About: NextPage = () => {
   return (
@@ -51,5 +53,4 @@ const About: NextPage = () => {
     </>
   );
 };
-
 export default About;

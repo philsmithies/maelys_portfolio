@@ -1,6 +1,6 @@
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import imageUrlBuilder from "@sanity/image-url";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import client from "../client";
 
@@ -9,8 +9,6 @@ interface ImageProps {
 }
 
 const HomePageGrid = ({ images: images }: ImageProps): JSX.Element => {
-  console.log("the gallery is", images[0]);
-
   let gallery = images[0];
   const [lightboxDisplay, setLightBoxDisplay] = useState(false);
   const [imageToShow, setImageToShow] = useState("");
@@ -26,26 +24,48 @@ const HomePageGrid = ({ images: images }: ImageProps): JSX.Element => {
     setLightBoxDisplay(true);
   };
 
-  const showNext = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const showNext = (e) => {
     e.stopPropagation();
-    let currentIndex = images.indexOf(imageToShow);
-    if (currentIndex >= images.length - 1) {
+    let currentIndex = gallery.images.indexOf(imageToShow);
+    if (currentIndex >= gallery.images.length - 1) {
       setLightBoxDisplay(false);
+      e.stopPropagation();
     } else {
-      let nextImage = images[currentIndex + 1];
+      let nextImage = gallery.images[currentIndex + 1];
       setImageToShow(nextImage);
     }
   };
 
-  const showPrev = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const showPrev = (e) => {
     e.stopPropagation();
-    let currentIndex = images.indexOf(imageToShow);
+    let currentIndex = gallery.images.indexOf(imageToShow);
     if (currentIndex <= 0) {
       setLightBoxDisplay(false);
     } else {
-      let nextImage = images[currentIndex - 1];
+      let nextImage = gallery.images[currentIndex - 1];
       setImageToShow(nextImage);
     }
+  };
+
+  const onKeyDown = (e) => {
+    if (["ArrowRight", "ArrowLeft"].indexOf(e.key) !== -1) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    switch (e.key) {
+      case "ArrowLeft":
+        showPrev(e);
+        break;
+      case "ArrowRight":
+        showNext(e);
+        break;
+      default:
+        break;
+    }
+  };
+
+  const onKeyPressed = (e) => {
+    console.log(e.key);
   };
 
   const builder = imageUrlBuilder(client);
@@ -60,12 +80,16 @@ const HomePageGrid = ({ images: images }: ImageProps): JSX.Element => {
         <div id="lightbox" onClick={hideLightBox}>
           <FaArrowLeft
             className="w-20 hover:cursor-pointer"
-            onClick={() => showNext}
+            onClick={showPrev}
           />
-          <img id="lightbox-img" src={imageToShow} className="h-5/6"></img>
+          <img
+            id="lightbox-img"
+            src={urlFor(imageToShow).width(800).url()}
+            className="h-5/6 transition-all	duration-700 ease-in-out"
+          ></img>
           <FaArrowRight
             className="w-20 hover:cursor-pointer"
-            onClick={() => showNext}
+            onClick={showNext}
           />
         </div>
       ) : (
@@ -75,8 +99,10 @@ const HomePageGrid = ({ images: images }: ImageProps): JSX.Element => {
         <Masonry gutter={"5px"}>
           {gallery.images.map((image, key) => (
             <img
-              className="image-card hover:cursor-pointer hover:opacity-50"
+              className="image-card hover:cursor-pointer hover:opacity-50 focus:outline-none"
               onClick={() => showImage(image)}
+              tabIndex={-1}
+              onKeyDown={onKeyDown}
               // src={image}
               src={urlFor(image).width(800).url()}
               key={key}

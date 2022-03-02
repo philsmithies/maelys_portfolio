@@ -1,6 +1,6 @@
 export default {
   title: "Text Content",
-  name: "textcontent",
+  name: "websitetext",
   type: "document",
   fields: [
     {

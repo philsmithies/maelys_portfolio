@@ -23,9 +23,11 @@ const Index: NextPage = ({ gallery }) => {
         </div>
         <div className="my-40 mx-auto w-full">
           <MyWork gallery={gallery} />
-          <div className="mx-auto flex max-w-md flex-col items-center justify-center pt-24 lg:max-w-4xl lg:flex-row">
+          <div className="mx-auto flex flex-col items-center justify-center pt-24 lg:max-w-4xl lg:flex-row">
             <GetInTouch />
-            <ContactForm />
+            <div className="max-w-xl">
+              <ContactForm />
+            </div>
             <ScrollTopButton />
           </div>
         </div>
