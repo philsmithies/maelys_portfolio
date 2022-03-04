@@ -14,26 +14,6 @@ import { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 
 const Index: NextPage = ({ gallery }) => {
-  // percentage of parent in view before trigger
-  const { ref, inView } = useInView({ threshold: 0.2 });
-  const animation = useAnimation();
-
-  useEffect(() => {
-    console.log("in view is ", inView);
-    if (inView) {
-      animation.start({
-        x: 0,
-        transition: {
-          type: "spring",
-          duration: 1,
-          bounce: 0.3,
-        },
-      });
-    } else {
-      animation.start({ x: "-100vw" });
-    }
-  }, [inView]);
-
   const aboutRef = useRef(null);
   return (
     <>
@@ -51,16 +31,8 @@ const Index: NextPage = ({ gallery }) => {
             <div className="max-w-xl">
               <ContactForm />
             </div>
-            <div className="h-screen w-full" ref={ref}>
-              <motion.div
-                animate={animation}
-                className="h-screen bg-yellow-400"
-              >
-                asd
-              </motion.div>
-            </div>
-            <ScrollTopButton />
           </div>
+          <ScrollTopButton />
         </div>
       </div>
     </>

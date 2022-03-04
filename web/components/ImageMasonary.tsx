@@ -3,6 +3,7 @@ import imageUrlBuilder from "@sanity/image-url";
 import { useEffect, useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import client from "../client";
+import { motion } from "framer-motion";
 
 interface ImageProps {
   images: string[];
@@ -74,10 +75,29 @@ const HomePageGrid = ({ images: images }: ImageProps): JSX.Element => {
     return builder.image(source);
   }
 
+  const transition = {
+    type: "spring",
+    damping: 25,
+    stiffness: 120,
+  };
+
   return (
     <>
       {lightboxDisplay ? (
-        <div id="lightbox" onClick={hideLightBox}>
+        <motion.div
+          initial="pageInitial"
+          animate="pageAnimate"
+          variants={{
+            pageInitial: {
+              opacity: 0,
+            },
+            pageAnimate: {
+              opacity: 1,
+            },
+          }}
+          id="lightbox"
+          onClick={hideLightBox}
+        >
           <FaArrowLeft
             className="w-20 hover:cursor-pointer"
             onClick={showPrev}
@@ -86,12 +106,12 @@ const HomePageGrid = ({ images: images }: ImageProps): JSX.Element => {
             id="lightbox-img"
             src={urlFor(imageToShow).width(800).url()}
             className="h-5/6 transition-all	duration-700 ease-in-out"
-          ></img>
+          />
           <FaArrowRight
             className="w-20 hover:cursor-pointer"
             onClick={showNext}
           />
-        </div>
+        </motion.div>
       ) : (
         ""
       )}
