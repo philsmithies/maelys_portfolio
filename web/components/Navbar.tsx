@@ -49,7 +49,7 @@ const Navbar = (): JSX.Element => {
       <div className="flex w-full items-center justify-between md:w-4/12">
         <Link href="/">
           <div className="ml-4 fill-black py-2 hover:cursor-pointer">
-            <img src="/images/logonew.png" className="w-2/5" />
+            <img src="/images/newbanner.png" className="w-2/5" />
           </div>
         </Link>
         <button

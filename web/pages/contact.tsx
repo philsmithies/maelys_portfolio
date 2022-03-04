@@ -29,7 +29,7 @@ const Contact = () => {
           nibh a felis porta, vitae faucibus mi varius.
         </p>
       </div>
-      <hr className="my-10 w-2/4 self-center border border-black" />
+      <hr className="border-half my-10 w-2/4 self-center border-black" />
       <div className="flex justify-center md:justify-start">
         <div>
           <p className="font-syne text-lg font-bold">Email:</p>

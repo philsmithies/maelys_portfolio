@@ -11,6 +11,9 @@ module.exports = {
     fontFamily: {
       syne: ["Syne", "courier"],
     },
+    border: {
+      half: ["0.5px"],
+    },
   },
   plugins: [],
 };

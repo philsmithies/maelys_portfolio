@@ -9,8 +9,31 @@ import { NextPage } from "next/types";
 import client from "../client";
 import groq from "groq";
 import Posts from "./types";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
 
 const Index: NextPage = ({ gallery }) => {
+  // percentage of parent in view before trigger
+  const { ref, inView } = useInView({ threshold: 0.2 });
+  const animation = useAnimation();
+
+  useEffect(() => {
+    console.log("in view is ", inView);
+    if (inView) {
+      animation.start({
+        x: 0,
+        transition: {
+          type: "spring",
+          duration: 1,
+          bounce: 0.3,
+        },
+      });
+    } else {
+      animation.start({ x: "-100vw" });
+    }
+  }, [inView]);
+
   const aboutRef = useRef(null);
   return (
     <>
@@ -18,7 +41,7 @@ const Index: NextPage = ({ gallery }) => {
         <div className="top-[200px] mx-auto flex h-screen w-full justify-center bg-[url('/images/homepage2.jpg')] bg-cover">
           <ScrollDownButton reference={aboutRef} />
         </div>
-        <div ref={aboutRef}>
+        <div ref={aboutRef} className="mx-auto">
           <AboutMe />
         </div>
         <div className="my-40 mx-auto w-full">
@@ -27,6 +50,14 @@ const Index: NextPage = ({ gallery }) => {
             <GetInTouch />
             <div className="max-w-xl">
               <ContactForm />
+            </div>
+            <div className="h-screen w-full" ref={ref}>
+              <motion.div
+                animate={animation}
+                className="h-screen bg-yellow-400"
+              >
+                asd
+              </motion.div>
             </div>
             <ScrollTopButton />
           </div>
@@ -40,9 +71,6 @@ export async function getStaticProps() {
   const gallery = await client.fetch(groq`
       *[_type == "gallery" && title == 'Home']
     `);
-
-  // By returning { props: { posts } }, the Blog component
-  // will receive `posts` as a prop at build time
   return {
     props: {
       gallery,

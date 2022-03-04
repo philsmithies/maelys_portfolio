@@ -13,7 +13,7 @@ const About: NextPage = () => {
       <Head>
         <title>About Me</title>
       </Head>
-      <div className="mx-auto flex h-screen flex-col items-center justify-center text-white md:flex-row ">
+      <div className="mx-auto flex h-screen w-4/5 flex-col items-center justify-center text-white md:flex-row ">
         <div>
           <img
             src="/images/aboutme.jpeg"
@@ -21,16 +21,17 @@ const About: NextPage = () => {
             className="mb-10 w-96"
           />
         </div>
-        <div className="flex max-w-sm flex-col md:ml-10">
+        <div className="flex flex-col md:ml-10 ">
           <img
             src="/images/star.svg"
             alt="about me"
-            className="absolute -z-10 w-40 self-end"
+            className="absolute -z-10 ml-10 w-40 self-end"
           />
+
           <h1 className="font-syne pb-3 text-center text-4xl font-semibold text-black md:text-left">
             Maelys Cha Cha
           </h1>
-          <p className="text-black">
+          <p className="max-w-sm text-black">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium
             nibh a felis porta, vitae faucibus mi varius. Proin ornare lobortis
             ex. Aliquam consectetur suscipit malesuada. Sed dignissim nibh non
@@ -48,6 +49,11 @@ const About: NextPage = () => {
             vulputate. Sed vitae fringilla odio, in semper metus. Aliquam
             suscipit turpis id dolor vulputate, nec blandit dui lacinia.
           </p>
+          <img
+            src="/images/rainbowblue.svg"
+            alt="about me"
+            className="absolute -z-10 ml-10 w-40 self-start fill-yellow-100"
+          />
         </div>
       </div>
     </>
