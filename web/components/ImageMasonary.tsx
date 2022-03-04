@@ -29,8 +29,8 @@ const HomePageGrid = ({ images: images }: ImageProps): JSX.Element => {
     e.stopPropagation();
     let currentIndex = gallery.images.indexOf(imageToShow);
     if (currentIndex >= gallery.images.length - 1) {
+      document.body.style.overflow = "unset";
       setLightBoxDisplay(false);
-      e.stopPropagation();
     } else {
       let nextImage = gallery.images[currentIndex + 1];
       setImageToShow(nextImage);
