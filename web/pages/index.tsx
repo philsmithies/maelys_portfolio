@@ -9,7 +9,7 @@ import { NextPage } from "next/types";
 import client from "../client";
 import groq from "groq";
 
-const Index: NextPage = ({ gallery }) => {
+const Index: NextPage = ({ gallery, websiteText }) => {
   const aboutRef = useRef(null);
   return (
     <>
@@ -18,7 +18,7 @@ const Index: NextPage = ({ gallery }) => {
           <ScrollDownButton reference={aboutRef} />
         </div>
         <div ref={aboutRef} className="mx-auto">
-          <AboutMe />
+          <AboutMe aboutText={websiteText.aboutHome} />
         </div>
         <div className="my-40 mx-auto w-full">
           <MyWork gallery={gallery} />
@@ -35,15 +35,22 @@ const Index: NextPage = ({ gallery }) => {
   );
 };
 
-export async function getStaticProps() {
+export const getStaticProps = async () => {
   const gallery = await client.fetch(groq`
-      *[_type == "gallery" && title == 'Home']
-    `);
+  *[_type == "gallery" && title == 'Home']
+`);
+
+  const websiteText = await client.fetch(groq`
+  *[_type == "textContent"][0]
+`);
+
   return {
     props: {
-      gallery,
+      gallery: gallery,
+      websiteText: websiteText,
     },
+    revalidate: 1,
   };
-}
+};
 
 export default Index;

@@ -3,7 +3,8 @@ import { useEffect } from "react";
 import Wave from "../../components/Wave";
 import useHasBeenViewed from "../../utils/useHasBeenViewed";
 
-const AboutMe = (): JSX.Element => {
+const AboutMe = ({ aboutText }): JSX.Element => {
+  console.log(aboutText);
   // percentage of parent in view before trigger
   const [hasBeenViewed, ref] = useHasBeenViewed();
   const animation = useAnimation();
@@ -33,9 +34,7 @@ const AboutMe = (): JSX.Element => {
       <div className="flex h-full max-w-sm flex-col items-center justify-center text-center md:w-3/6">
         <h1 className="font-syne text-4xl font-semibold">About Me</h1>
         <p className="font-syne px-5 pt-5 text-base">
-          Hi, I’m Maëlys. Lorem ipsum dolor sit amet, consectetur adipiscing
-          elit. Sed pretium nibh a felis porta, vitae faucibus mi varius.
-          Aliquam consectetur suscipit malesuada. ✨
+          The text on home is {aboutText}
         </p>
         <img
           src="/images/rainbowblue.svg"
@@ -55,7 +54,7 @@ const AboutMe = (): JSX.Element => {
           className="mt-5 md:w-96"
         />
       </div>
-      <div className="absolute -z-10 h-max w-full">
+      <div className="absolute -z-10 h-fit w-full">
         <motion.div className="w-full rotate-90">
           <svg
             viewBox="0 0 1440 363"

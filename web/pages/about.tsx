@@ -7,7 +7,7 @@ import type { NextPage } from "next";
 import groq from "groq";
 import client from "../client";
 
-const About: NextPage = () => {
+const About: NextPage = ({ websiteText }) => {
   return (
     <>
       <Head>
@@ -31,24 +31,7 @@ const About: NextPage = () => {
           <h1 className="font-syne pb-3 text-center text-4xl font-semibold text-black md:text-left">
             Maelys Cha Cha
           </h1>
-          <p className="max-w-sm text-black">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium
-            nibh a felis porta, vitae faucibus mi varius. Proin ornare lobortis
-            ex. Aliquam consectetur suscipit malesuada. Sed dignissim nibh non
-            felis vehicula cursus a in enim. Nunc varius, mauris eu congue
-            aliquam, est ex rutrum sem, id fringilla felis diam sed purus. Donec
-            aliquam ipsum et hendrerit fermentum. Aliquam posuere nisl ut ante
-            condimentum sagittis. Fusce ut lorem at nibh hendrerit interdum id
-            vitae mauris. Vivamus non nisi imperdiet, convallis mauris nec,
-            tincidunt purus. Nunc aliquet vel nisi at rutrum. Cras gravida
-            convallis justo non eleifend. Nullam tellus mi, varius ut lacus eu,
-            lacinia aliquet enim.
-            <br />
-            <br />
-            Phasellus eu tincidunt libero. Integer fermentum nec velit eget
-            vulputate. Sed vitae fringilla odio, in semper metus. Aliquam
-            suscipit turpis id dolor vulputate, nec blandit dui lacinia.
-          </p>
+          <p className="max-w-sm text-black">{websiteText.aboutPage}</p>
           <img
             src="/images/rainbowblue.svg"
             alt="about me"
@@ -59,4 +42,18 @@ const About: NextPage = () => {
     </>
   );
 };
+
+export const getStaticProps = async () => {
+  const websiteText = await client.fetch(groq`
+  *[_type == "textContent"][0]
+`);
+
+  return {
+    props: {
+      websiteText,
+    },
+    revalidate: 1,
+  };
+};
+
 export default About;
