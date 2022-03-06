@@ -48,14 +48,14 @@ const AboutMe = (): JSX.Element => {
           className="absolute -z-10 mt-16 w-20 self-start fill-yellow-100"
         />
       </div>
-      <div className="mx-auto ml-5 h-full w-4/6 md:w-3/6">
+      <div className="ml-5 h-full w-4/6">
         <img
           src="/images/aboutme.jpeg"
           alt="about me"
           className="mt-5 md:w-96"
         />
       </div>
-      <div className="absolute -z-10 h-screen w-full">
+      <div className="absolute -z-10 h-max w-full">
         <motion.div className="w-full rotate-90">
           <svg
             viewBox="0 0 1440 363"
@@ -67,7 +67,7 @@ const AboutMe = (): JSX.Element => {
               stroke="#000"
               animate={animation}
               strokeOpacity="1"
-              strokeWidth="1"
+              strokeWidth="0.5"
             />
           </svg>
         </motion.div>

@@ -12,7 +12,8 @@ const ScrollTopButton = (): JSX.Element => {
       animation.start({
         opacity: 1,
         transition: {
-          duration: 1,
+          duration: 0.45,
+          ease: "easeIn",
         },
       });
     } else {

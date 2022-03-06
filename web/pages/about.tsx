@@ -13,7 +13,7 @@ const About: NextPage = () => {
       <Head>
         <title>About Me</title>
       </Head>
-      <div className="mx-auto flex h-screen w-4/5 flex-col items-center justify-center text-white md:flex-row ">
+      <div className="mx-auto flex h-full w-4/5 flex-col items-center justify-center pt-40 pb-28 text-white md:flex-row ">
         <div>
           <img
             src="/images/aboutme.jpeg"

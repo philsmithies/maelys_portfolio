@@ -8,10 +8,6 @@ import GetInTouch from "../components/Index/GetInTouch";
 import { NextPage } from "next/types";
 import client from "../client";
 import groq from "groq";
-import Posts from "./types";
-import { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
-import { motion, useAnimation } from "framer-motion";
 
 const Index: NextPage = ({ gallery }) => {
   const aboutRef = useRef(null);

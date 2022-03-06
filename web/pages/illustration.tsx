@@ -7,8 +7,8 @@ const Illustration: NextPage = ({ gallery }) => {
   return (
     <>
       <div className="mx-auto flex max-w-3xl flex-col pt-24 text-center">
-        <h1 className="mt-28 text-4xl">Illustration 🌱 </h1>
-        <p>
+        <h1 className="font-syne mt-28 text-4xl">Illustration 🌱 </h1>
+        <p className="mt-2 font-medium">
           I work as a digital illustrator in the fields of editorial
           illustration, book covers, illustrations for packaging and print
           products, advertising illustration, and system/brand illustrations.

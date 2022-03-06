@@ -13,9 +13,9 @@ const Footer = (): JSX.Element => {
               Photos
             </p>
           </Link>
-          <Link href="/blog">
+          <Link href="/illustration">
             <p className="mr-2 border-b-2 border-black border-transparent text-sm transition duration-150 hover:cursor-pointer hover:border-orange-400 hover:text-orange-400">
-              Thoughts
+              Illustration
             </p>
           </Link>
           <a href="/about">

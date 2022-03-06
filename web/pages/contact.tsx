@@ -6,10 +6,10 @@ import ContactForm from "../components/ContactForm";
 const Contact = () => {
   return (
     <div
-      className="sm: mx-auto flex h-screen max-w-sm flex-col py-24
+      className="flex h-full max-w-sm flex-col items-center py-24 sm:mx-auto
   md:max-w-md lg:max-w-4xl"
     >
-      <div>
+      <div className="w-5/6">
         <h1 className="font-syne mt-32 mb-10 text-4xl font-bold">Hello ☺</h1>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium
@@ -29,9 +29,9 @@ const Contact = () => {
           nibh a felis porta, vitae faucibus mi varius.
         </p>
       </div>
-      <hr className="border-half my-10 w-2/4 self-center border-black" />
-      <div className="flex justify-center md:justify-start">
-        <div>
+      <hr className="border-half my-10 w-5/6 border-black" />
+      <div className="flex w-5/6 justify-center md:justify-start">
+        <div className="">
           <p className="font-syne text-lg font-bold">Email:</p>
           <p className="mb-3 text-lg">maelyschay@gmail.com</p>
         </div>
