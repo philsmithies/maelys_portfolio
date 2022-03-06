@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useViewportScroll, useMotionValue } from "framer-motion";
-import { FaGripLines, FaRegWindowClose } from "react-icons/fa";
 
 const Navbar = (): JSX.Element => {
   const [hidden, setHidden] = useState(false);
@@ -23,9 +22,9 @@ const Navbar = (): JSX.Element => {
   };
 
   function update() {
-    if (scrollY?.current < scrollY?.prev) {
+    if (scrollY?.get() < scrollY?.getPrevious()) {
       setHidden(false);
-    } else if (scrollY?.current > 50 && scrollY?.current > scrollY?.prev) {
+    } else if (scrollY?.get() > 50 && scrollY?.get() > scrollY?.getPrevious()) {
       setHidden(true);
     }
   }
@@ -48,12 +47,12 @@ const Navbar = (): JSX.Element => {
     >
       <div className="flex w-full items-center justify-between md:w-4/12">
         <Link href="/">
-          <div className="ml-4 fill-black py-2 hover:cursor-pointer">
-            <img src="/images/newbanner.png" className="w-2/5" />
+          <div className="ml-4  fill-black py-2 hover:cursor-pointer">
+            <img src="/images/newbanner.png" className="max-h-44 w-2/5" />
           </div>
         </Link>
         <button
-          className="group flex h-10 w-10 flex-col items-center justify-center md:hidden"
+          className="group mr-2 flex h-10 w-10 flex-col items-center justify-center md:hidden"
           onClick={() => setMobileHidden(!mobileHidden)}
         >
           <div

@@ -4,7 +4,7 @@ import SocialsBar from "./SocialsBar";
 
 const Footer = (): JSX.Element => {
   return (
-    <footer className="mx-auto w-full">
+    <footer className="mx-auto w-full bg-white  ">
       <hr style={{ height: 0.5 }} className="bg-black" />
       <div className="flex flex-col items-center py-8">
         <div className="mx-auto flex pl-6">
