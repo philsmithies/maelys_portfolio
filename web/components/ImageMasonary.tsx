@@ -1,15 +1,11 @@
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import imageUrlBuilder from "@sanity/image-url";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import client from "../client";
 import { motion } from "framer-motion";
 
-interface ImageProps {
-  images: string[];
-}
-
-const HomePageGrid = ({ images: images }: ImageProps): JSX.Element => {
+const HomePageGrid = ({ galleryImages: images }): JSX.Element => {
   let gallery = images[0];
   const [lightboxDisplay, setLightBoxDisplay] = useState(false);
   const [imageToShow, setImageToShow] = useState("");
@@ -118,13 +114,12 @@ const HomePageGrid = ({ images: images }: ImageProps): JSX.Element => {
       <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
         <Masonry gutter={"5px"}>
           {gallery.images.map((image, key) => (
-            <div className="bg-white">
+            <div key={key} className="bg-white">
               <img
                 className="image-card hover:cursor-pointer hover:opacity-50 focus:outline-none"
                 onClick={() => showImage(image)}
                 tabIndex={-1}
                 onKeyDown={onKeyDown}
-                // src={image}
                 src={urlFor(image).width(800).url()}
                 key={key}
               />

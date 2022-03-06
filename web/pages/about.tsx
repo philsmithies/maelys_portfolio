@@ -7,7 +7,15 @@ import type { NextPage } from "next";
 import groq from "groq";
 import client from "../client";
 
-const About: NextPage = ({ websiteText }) => {
+interface WebsiteText {
+  websiteText: {
+    aboutHome: string;
+    aboutPage: string;
+    illustrationIntro: string;
+  };
+}
+
+const About: NextPage<WebsiteText> = ({ websiteText }) => {
   return (
     <>
       <Head>
@@ -23,7 +31,7 @@ const About: NextPage = ({ websiteText }) => {
         </div>
         <div className="flex flex-col md:ml-10 ">
           <img
-            src="/images/star.svg"
+            src="/icons/star.svg"
             alt="about me"
             className="absolute -z-10 ml-10 w-40 self-end"
           />
@@ -33,7 +41,7 @@ const About: NextPage = ({ websiteText }) => {
           </h1>
           <p className="max-w-sm text-black">{websiteText.aboutPage}</p>
           <img
-            src="/images/rainbowblue.svg"
+            src="/icons/rainbowblue.svg"
             alt="about me"
             className="absolute -z-10 ml-10 w-40 self-start fill-yellow-100"
           />

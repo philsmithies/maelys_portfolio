@@ -1,4 +1,4 @@
-export default interface Posts {
+export interface Posts {
   posts: {
     author: {
       name: string;
@@ -20,5 +20,16 @@ export default interface Posts {
       src: string;
     };
     categories: string | null;
+  }[];
+}
+
+export interface PageProps {
+  gallery: {
+    images: string[];
+  };
+  websiteText: {
+    aboutHome: string;
+    aboutPage: string;
+    illustrationIntro: string;
   }[];
 }

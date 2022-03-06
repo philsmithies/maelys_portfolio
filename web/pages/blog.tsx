@@ -2,7 +2,7 @@ import groq from "groq";
 import client from "../client";
 import BlogItem from "../components/BlogItem";
 import { NextPage } from "next/types";
-import Posts from "./types";
+import type { Posts } from "./types";
 
 const Blog: NextPage<Posts> = ({ posts }) => {
   console.log("the posts is", posts);

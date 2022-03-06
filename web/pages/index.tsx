@@ -2,14 +2,14 @@ import { useRef } from "react";
 import ContactForm from "../components/ContactForm";
 import ScrollDownButton from "../components/ScrollDownButton";
 import ScrollTopButton from "../components/ScrollTopButton";
-import AboutMe from "../components/Index/AboutMe";
-import MyWork from "../components/Index/MyWork";
-import GetInTouch from "../components/Index/GetInTouch";
-import { NextPage } from "next/types";
+import AboutMe from "../components/Home/AboutMe";
+import MyWork from "../components/Home/MyWork";
+import GetInTouch from "../components/Home/GetInTouch";
 import client from "../client";
 import groq from "groq";
+import type { PageProps } from "./types";
 
-const Index: NextPage = ({ gallery, websiteText }) => {
+const Index = ({ gallery, websiteText }: PageProps) => {
   const aboutRef = useRef(null);
   return (
     <>
@@ -18,7 +18,7 @@ const Index: NextPage = ({ gallery, websiteText }) => {
           <ScrollDownButton reference={aboutRef} />
         </div>
         <div ref={aboutRef} className="mx-auto">
-          <AboutMe aboutText={websiteText.aboutHome} />
+          <AboutMe aboutText={websiteText["aboutHome"]} />
         </div>
         <div className="my-40 mx-auto w-full">
           <MyWork gallery={gallery} />
