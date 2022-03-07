@@ -3,11 +3,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "echo 'Building Sanity to public/studio' && cd ../studio && yarn && npx @sanity/cli build ../public/studio -y && echo 'Done'",
     "build": "next build",
     "start": "next start",
     "sanity": "cd ../studio && sanity start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "npm run build && next export"
   },
   "dependencies": {
     "@portabletext/react": "^1.0.1",
@@ -36,6 +36,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.1",
+    "babel-eslint": "^10.1.0",
     "eslint": "8.6.0",
     "eslint-config-next": "12.0.7",
     "postcss": "^8.4.5",
