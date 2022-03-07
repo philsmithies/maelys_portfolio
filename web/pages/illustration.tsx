@@ -2,7 +2,7 @@ import { NextPage } from "next/types";
 import ImageMasonary from "../components/ImageMasonary";
 import groq from "groq";
 import client from "../client";
-import type { PageProps } from "./types";
+import type { PageProps } from "../../types/types";
 
 const Illustration = ({ gallery, websiteText }: PageProps) => {
   return (
