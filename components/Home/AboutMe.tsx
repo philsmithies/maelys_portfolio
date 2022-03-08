@@ -4,7 +4,6 @@ import Wave from "../Wave";
 import useHasBeenViewed from "../../utils/useHasBeenViewed";
 
 const AboutMe = ({ aboutText }): JSX.Element => {
-  console.log(aboutText);
   // percentage of parent in view before trigger
   const [hasBeenViewed, ref] = useHasBeenViewed();
   const animation = useAnimation();
