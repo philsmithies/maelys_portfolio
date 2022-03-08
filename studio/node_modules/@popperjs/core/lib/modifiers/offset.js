@@ -1,11 +1,10 @@
 import getBasePlacement from "../utils/getBasePlacement.js";
-import { top, left, right, placements } from "../enums.js"; // eslint-disable-next-line import/no-unused-modules
-
+import { top, left, right, placements } from "../enums.js";
 export function distanceAndSkiddingToXY(placement, rects, offset) {
   var basePlacement = getBasePlacement(placement);
   var invertDistance = [left, top].indexOf(basePlacement) >= 0 ? -1 : 1;
 
-  var _ref = typeof offset === 'function' ? offset(Object.assign({}, rects, {
+  var _ref = typeof offset === 'function' ? offset(Object.assign(Object.assign({}, rects), {}, {
     placement: placement
   })) : offset,
       skidding = _ref[0],

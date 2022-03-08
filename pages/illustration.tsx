@@ -1,8 +1,8 @@
 import { NextPage } from "next/types";
 import ImageMasonary from "../components/ImageMasonary";
 import groq from "groq";
-import client from "../client";
-import type { PageProps } from "../../types/types";
+import type { PageProps } from "../types";
+import { getClient } from "../utils/sanity";
 
 const Illustration = ({ gallery, websiteText }: PageProps) => {
   return (
@@ -19,11 +19,11 @@ const Illustration = ({ gallery, websiteText }: PageProps) => {
 };
 
 export const getStaticProps = async () => {
-  const websiteText = await client.fetch(groq`
+  const websiteText = await getClient(true).fetch(groq`
   *[_type == "textContent"][0]
 `);
 
-  const gallery = await client.fetch(groq`
+  const gallery = await getClient(true).fetch(groq`
 *[_type == "gallery" && title == 'Illustration']
 `);
 

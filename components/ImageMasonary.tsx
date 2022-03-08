@@ -2,8 +2,8 @@ import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import imageUrlBuilder from "@sanity/image-url";
 import { useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import client from "../client";
 import { motion } from "framer-motion";
+import { getClient } from "../utils/sanity";
 
 const HomePageGrid = ({ galleryImages: images }): JSX.Element => {
   let gallery = images[0];
@@ -65,7 +65,7 @@ const HomePageGrid = ({ galleryImages: images }): JSX.Element => {
     console.log(e.key);
   };
 
-  const builder = imageUrlBuilder(client);
+  const builder = imageUrlBuilder(getClient(true));
 
   function urlFor(source) {
     return builder.image(source);

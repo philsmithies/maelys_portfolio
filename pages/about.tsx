@@ -1,11 +1,9 @@
-import ContactForm from "../components/ContactForm";
-import SocialsBar from "../components/SocialsBar";
 import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
 import type { NextPage } from "next";
 import groq from "groq";
-import client from "../client";
+import { getClient } from "../utils/sanity";
 
 interface WebsiteText {
   websiteText: {
@@ -52,7 +50,7 @@ const About: NextPage<WebsiteText> = ({ websiteText }) => {
 };
 
 export const getStaticProps = async () => {
-  const websiteText = await client.fetch(groq`
+  const websiteText = await getClient(true).fetch(groq`
   *[_type == "textContent"][0]
 `);
 
