@@ -101,12 +101,12 @@
           }
           replaceToken = true;
         }
-        var returnHintsFromAtValues = function(atValues) {
+        function returnHintsFromAtValues(atValues) {
           if (atValues)
             for (var i = 0; i < atValues.length; ++i) if (!prefix || matches(atValues[i], prefix, matchInMiddle))
               result.push(quote + atValues[i] + quote);
           return returnHints();
-        };
+        }
         if (atValues && atValues.then) return atValues.then(returnHintsFromAtValues);
         return returnHintsFromAtValues(atValues);
       } else { // An attribute name
