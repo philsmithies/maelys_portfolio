@@ -1,8 +1,8 @@
 import { NextPage } from "next/types";
 import ImageMasonary from "../components/ImageMasonary";
+import groq from "groq";
 import type { PageProps } from "../types";
 import { getClient } from "../utils/sanity";
-import groq from "groq";
 
 const Illustration = ({ gallery, websiteText }: PageProps) => {
   return (
