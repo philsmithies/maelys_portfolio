@@ -1,8 +1,0 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-
-:root {
-  --sanity-color-white: #fff;
-  --main-navigation-color--inverted: var(--sanity-color-white);
-  --brand-primary: #008080;
-  --font-family-base: "Roboto";
-}

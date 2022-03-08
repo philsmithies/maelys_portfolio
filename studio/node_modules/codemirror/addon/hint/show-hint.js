@@ -1,8 +1,6 @@
 // CodeMirror, copyright (c) by Marijn Haverbeke and others
 // Distributed under an MIT license: https://codemirror.net/LICENSE
 
-// declare global: DOMRect
-
 (function(mod) {
   if (typeof exports == "object" && typeof module == "object") // CommonJS
     mod(require("../../lib/codemirror"));
@@ -61,10 +59,8 @@
     this.startPos = this.cm.getCursor("start");
     this.startLen = this.cm.getLine(this.startPos.line).length - this.cm.getSelection().length;
 
-    if (this.options.updateOnCursorActivity) {
-      var self = this;
-      cm.on("cursorActivity", this.activityFunc = function() { self.cursorActivity(); });
-    }
+    var self = this;
+    cm.on("cursorActivity", this.activityFunc = function() { self.cursorActivity(); });
   }
 
   var requestAnimationFrame = window.requestAnimationFrame || function(fn) {
@@ -77,9 +73,7 @@
       if (!this.active()) return;
       this.cm.state.completionActive = null;
       this.tick = null;
-      if (this.options.updateOnCursorActivity) {
-        this.cm.off("cursorActivity", this.activityFunc);
-      }
+      this.cm.off("cursorActivity", this.activityFunc);
 
       if (this.widget && this.data) CodeMirror.signal(this.data, "close");
       if (this.widget) this.widget.close();
@@ -100,10 +94,8 @@
                                completion.to || data.to, "complete");
         CodeMirror.signal(data, "pick", completion);
         self.cm.scrollIntoView();
-      });
-      if (this.options.closeOnPick) {
-        this.close();
-      }
+      })
+      this.close();
     },
 
     cursorActivity: function() {
@@ -224,7 +216,6 @@
   }
 
   function Widget(completion, data) {
-    this.id = "cm-complete-" + Math.floor(Math.random(1e6))
     this.completion = completion;
     this.data = data;
     this.picked = false;
@@ -233,9 +224,6 @@
     var parentWindow = ownerDocument.defaultView || ownerDocument.parentWindow;
 
     var hints = this.hints = ownerDocument.createElement("ul");
-    hints.setAttribute("role", "listbox")
-    hints.setAttribute("aria-expanded", "true")
-    hints.id = this.id
     var theme = completion.cm.options.theme;
     hints.className = "CodeMirror-hints " + theme;
     this.selectedHint = data.selectedHint || 0;
@@ -246,9 +234,6 @@
       var className = HINT_ELEMENT_CLASS + (i != this.selectedHint ? "" : " " + ACTIVE_HINT_ELEMENT_CLASS);
       if (cur.className != null) className = cur.className + " " + className;
       elt.className = className;
-      if (i == this.selectedHint) elt.setAttribute("aria-selected", "true")
-      elt.id = this.id + "-" + i
-      elt.setAttribute("role", "option")
       if (cur.render) cur.render(elt, data, cur);
       else elt.appendChild(ownerDocument.createTextNode(cur.displayText || getText(cur)));
       elt.hintId = i;
@@ -274,18 +259,10 @@
     var winW = parentWindow.innerWidth || Math.max(ownerDocument.body.offsetWidth, ownerDocument.documentElement.offsetWidth);
     var winH = parentWindow.innerHeight || Math.max(ownerDocument.body.offsetHeight, ownerDocument.documentElement.offsetHeight);
     container.appendChild(hints);
-    cm.getInputField().setAttribute("aria-autocomplete", "list")
-    cm.getInputField().setAttribute("aria-owns", this.id)
-    cm.getInputField().setAttribute("aria-activedescendant", this.id + "-" + this.selectedHint)
+    var box = hints.getBoundingClientRect(), overlapY = box.bottom - winH;
+    var scrolls = hints.scrollHeight > hints.clientHeight + 1
+    var startScroll = cm.getScrollInfo();
 
-    var box = completion.options.moveOnOverlap ? hints.getBoundingClientRect() : new DOMRect();
-    var scrolls = completion.options.paddingForScrollbar ? hints.scrollHeight > hints.clientHeight + 1 : false;
-
-    // Compute in the timeout to avoid reflow on init
-    var startScroll;
-    setTimeout(function() { startScroll = cm.getScrollInfo(); });
-
-    var overlapY = box.bottom - winH;
     if (overlapY > 0) {
       var height = box.bottom - box.top, curTop = pos.top - (pos.bottom - box.top);
       if (curTop - height > 0) { // Fits above cursor
@@ -303,7 +280,6 @@
       }
     }
     var overlapX = box.right - winW;
-    if (scrolls) overlapX += cm.display.nativeBarWidth;
     if (overlapX > 0) {
       if (box.right - box.left > winW) {
         hints.style.width = (winW - 5) + "px";
@@ -332,7 +308,6 @@
 
     cm.on("scroll", this.onScroll = function() {
       var curScroll = cm.getScrollInfo(), editor = cm.getWrapperElement().getBoundingClientRect();
-      if (!startScroll) startScroll = cm.getScrollInfo();
       var newTop = top + startScroll.top - curScroll.top;
       var point = newTop - (parentWindow.pageYOffset || (ownerDocument.documentElement || ownerDocument.body).scrollTop);
       if (!below) point += hints.offsetHeight;
@@ -357,12 +332,7 @@
     CodeMirror.on(hints, "mousedown", function() {
       setTimeout(function(){cm.focus();}, 20);
     });
-
-    // The first hint doesn't need to be scrolled to on init
-    var selectedHintRange = this.getSelectedHintRange();
-    if (selectedHintRange.from !== 0 || selectedHintRange.to !== 0) {
-      this.scrollToActive();
-    }
+    this.scrollToActive()
 
     CodeMirror.signal(data, "select", completions[this.selectedHint], hints.childNodes[this.selectedHint]);
     return true;
@@ -372,11 +342,8 @@
     close: function() {
       if (this.completion.widget != this) return;
       this.completion.widget = null;
-      if (this.hints.parentNode) this.hints.parentNode.removeChild(this.hints);
+      this.hints.parentNode.removeChild(this.hints);
       this.completion.cm.removeKeyMap(this.keyMap);
-      var input = this.completion.cm.getInputField()
-      input.removeAttribute("aria-activedescendant")
-      input.removeAttribute("aria-owns")
 
       var cm = this.completion.cm;
       if (this.completion.options.closeOnUnfocus) {
@@ -404,22 +371,17 @@
         i = avoidWrap ? 0  : this.data.list.length - 1;
       if (this.selectedHint == i) return;
       var node = this.hints.childNodes[this.selectedHint];
-      if (node) {
-        node.className = node.className.replace(" " + ACTIVE_HINT_ELEMENT_CLASS, "");
-        node.removeAttribute("aria-selected")
-      }
+      if (node) node.className = node.className.replace(" " + ACTIVE_HINT_ELEMENT_CLASS, "");
       node = this.hints.childNodes[this.selectedHint = i];
       node.className += " " + ACTIVE_HINT_ELEMENT_CLASS;
-      node.setAttribute("aria-selected", "true")
-      this.completion.cm.getInputField().setAttribute("aria-activedescendant", node.id)
       this.scrollToActive()
       CodeMirror.signal(this.data, "select", this.data.list[this.selectedHint], node);
     },
 
     scrollToActive: function() {
-      var selectedHintRange = this.getSelectedHintRange();
-      var node1 = this.hints.childNodes[selectedHintRange.from];
-      var node2 = this.hints.childNodes[selectedHintRange.to];
+      var margin = this.completion.options.scrollMargin || 0;
+      var node1 = this.hints.childNodes[Math.max(0, this.selectedHint - margin)];
+      var node2 = this.hints.childNodes[Math.min(this.data.list.length - 1, this.selectedHint + margin)];
       var firstNode = this.hints.firstChild;
       if (node1.offsetTop < this.hints.scrollTop)
         this.hints.scrollTop = node1.offsetTop - firstNode.offsetTop;
@@ -429,14 +391,6 @@
 
     screenAmount: function() {
       return Math.floor(this.hints.clientHeight / this.hints.firstChild.offsetHeight) || 1;
-    },
-
-    getSelectedHintRange: function() {
-      var margin = this.completion.options.scrollMargin || 0;
-      return {
-        from: Math.max(0, this.selectedHint - margin),
-        to: Math.min(this.data.list.length - 1, this.selectedHint + margin),
-      };
     }
   };
 
@@ -514,15 +468,11 @@
     completeSingle: true,
     alignWithWord: true,
     closeCharacters: /[\s()\[\]{};:>,]/,
-    closeOnPick: true,
     closeOnUnfocus: true,
-    updateOnCursorActivity: true,
     completeOnSingleClick: true,
     container: null,
     customKeys: null,
-    extraKeys: null,
-    paddingForScrollbar: true,
-    moveOnOverlap: true,
+    extraKeys: null
   };
 
   CodeMirror.defineOption("hintOptions", null);
