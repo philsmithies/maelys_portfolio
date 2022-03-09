@@ -6,6 +6,7 @@ import AboutMe from "../components/Home/AboutMe";
 import MyWork from "../components/Home/MyWork";
 import GetInTouch from "../components/Home/GetInTouch";
 import { getClient } from "../utils/sanity";
+import Image from "next/dist/client/image";
 import groq from "groq";
 import type { PageProps } from "../types";
 
@@ -14,8 +15,18 @@ const Index = ({ gallery, websiteText }: PageProps) => {
   return (
     <>
       <div className="flex flex-col">
-        <div className="top-[200px] mx-auto flex h-screen w-full justify-center bg-[url('/images/homepage2.jpg')] bg-cover">
-          <ScrollDownButton reference={aboutRef} />
+        <div className="flex sm:h-4/6 md:h-screen w-full relative justify-center">
+          {/* bg-[url('/images/homepage2.jpg')] */}
+          <Image
+            unsized
+            src="/images/homepage2.jpg"
+            alt="Picture of the author"
+            // blurDataURL="data:..." automatically provided
+            placeholder="blur"
+          />
+          <div className="absolute z-20 self-end mx-auto">
+            <ScrollDownButton reference={aboutRef} />
+          </div>
         </div>
         <div ref={aboutRef} className="mx-auto">
           <AboutMe aboutText={websiteText["aboutHome"]} />
@@ -35,7 +46,7 @@ const Index = ({ gallery, websiteText }: PageProps) => {
   );
 };
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const gallery = await getClient(true).fetch(groq`
   *[_type == "gallery" && title == 'Home']
 `);
@@ -49,7 +60,6 @@ export const getStaticProps = async () => {
       gallery,
       websiteText,
     },
-    revalidate: 1,
   };
 };
 
