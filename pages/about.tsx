@@ -49,7 +49,7 @@ const About: NextPage<WebsiteText> = ({ websiteText }) => {
   );
 };
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const websiteText = await getClient(true).fetch(groq`
   *[_type == "textContent"][0]
 `);

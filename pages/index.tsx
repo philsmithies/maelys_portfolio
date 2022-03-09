@@ -5,7 +5,7 @@ import ScrollTopButton from "../components/ScrollTopButton";
 import AboutMe from "../components/Home/AboutMe";
 import MyWork from "../components/Home/MyWork";
 import GetInTouch from "../components/Home/GetInTouch";
-import client from "../client";
+import { getClient } from "../utils/sanity";
 import groq from "groq";
 import type { PageProps } from "../types";
 
@@ -35,19 +35,19 @@ const Index = ({ gallery, websiteText }: PageProps) => {
   );
 };
 
-export const getServerSideProps = async () => {
-  const gallery = await client.fetch(groq`
+export const getStaticProps = async () => {
+  const gallery = await getClient(true).fetch(groq`
   *[_type == "gallery" && title == 'Home']
 `);
 
-  const websiteText = await client.fetch(groq`
+  const websiteText = await getClient(true).fetch(groq`
   *[_type == "textContent"][0]
 `);
 
   return {
     props: {
-      gallery: gallery,
-      websiteText: websiteText,
+      gallery,
+      websiteText,
     },
     revalidate: 1,
   };

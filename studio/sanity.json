@@ -1,8 +1,8 @@
 {
   "root": true,
   "project": {
-    "name": "Maelys Portfolio",
-    "basePath": "https://maelysportfolio.sanity.studio/studio/"
+    "name": "Maëlys Portfolio",
+    "basePath": "/studio"
   },
   "api": {
     "projectId": "iuec1hub",
