@@ -15,7 +15,7 @@ const Index = ({ gallery, websiteText }: PageProps) => {
   return (
     <>
       <div className="flex flex-col">
-        <div className="flex sm:h-4/6 md:h-screen w-full relative justify-center">
+        <div className="flex sm:h-4/6 md:h-5/6 w-full relative justify-center">
           {/* bg-[url('/images/homepage2.jpg')] */}
           <Image
             unsized
@@ -24,7 +24,7 @@ const Index = ({ gallery, websiteText }: PageProps) => {
             // blurDataURL="data:..." automatically provided
             placeholder="blur"
           />
-          <div className="absolute z-20 self-end mx-auto">
+          <div className="absolute self-end mx-auto">
             <ScrollDownButton reference={aboutRef} />
           </div>
         </div>

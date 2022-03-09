@@ -122,7 +122,7 @@ const Navbar = (): JSX.Element => {
                 About
               </li>
             </Link>
-            <Link href="/about">
+            <Link href="/contact">
               <li
                 className="hover:cursor-pointer hover:text-orange-400"
                 onClick={toggleMobile}

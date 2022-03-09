@@ -1,6 +1,7 @@
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import Wave from "../Wave";
+import Image from "next/image";
 import useHasBeenViewed from "../../utils/useHasBeenViewed";
 
 const AboutMe = ({ aboutText }): JSX.Element => {
@@ -46,11 +47,12 @@ const AboutMe = ({ aboutText }): JSX.Element => {
           className="absolute -z-10 mt-16 w-20 self-start fill-yellow-100"
         />
       </div>
-      <div className="ml-5 h-full w-4/6">
-        <img
+      <div className="ml-5 h-full w-4/6 md:w-96">
+        <Image
+          unsized
           src="/images/aboutme.jpeg"
           alt="about me"
-          className="mt-5 md:w-96"
+          className="mt-5"
         />
       </div>
       <div className="absolute -z-10 h-fit w-full">
