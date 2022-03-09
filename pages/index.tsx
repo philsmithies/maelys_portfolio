@@ -5,11 +5,11 @@ import ScrollTopButton from "../components/ScrollTopButton";
 import AboutMe from "../components/Home/AboutMe";
 import MyWork from "../components/Home/MyWork";
 import GetInTouch from "../components/Home/GetInTouch";
-import groq from "groq";
 import { getClient } from "../utils/sanity";
-// import type { PageProps } from "../types/";
+import groq from "groq";
+import type { PageProps } from "../types";
 
-const Index = ({ gallery, websiteText }) => {
+const Index = ({ gallery, websiteText }: PageProps) => {
   const aboutRef = useRef(null);
   return (
     <>
@@ -46,8 +46,8 @@ export const getStaticProps = async () => {
 
   return {
     props: {
-      gallery: gallery,
-      websiteText: websiteText,
+      gallery,
+      websiteText,
     },
     revalidate: 1,
   };

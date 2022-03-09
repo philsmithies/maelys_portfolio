@@ -4,7 +4,7 @@
   "version": "1.0.1",
   "description": "",
   "main": "package.json",
-  "author": "Phil Smithies",
+  "author": "Knut Melvær <knut@sanity.io>",
   "license": "UNLICENSED",
   "scripts": {
     "start": "sanity start",

@@ -15,7 +15,6 @@
     "axios": "^0.26.0",
     "dotenv": "^16.0.0",
     "framer-motion": "4.1.17",
-    "lerna": "^3.22.1",
     "next": "10.0.0",
     "next-sanity": "^0.1.7",
     "nodemailer": "^6.7.2",
@@ -24,6 +23,7 @@
     "react-icons": "^4.3.1",
     "react-intersection-observer": "^8.33.1",
     "react-json-pretty": "^2.2.0",
+    "lerna": "^3.22.1",
     "react-responsive-masonry": "^2.1.4"
   },
   "devDependencies": {
