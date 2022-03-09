@@ -2,7 +2,7 @@
   "root": true,
   "project": {
     "name": "Maelys Portfolio",
-    "basePath": "https://maelysportfolio.vercel.app/studio/"
+    "basePath": "https://maelysportfolio.sanity.studio/studio/"
   },
   "api": {
     "projectId": "iuec1hub",
