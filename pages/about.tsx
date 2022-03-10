@@ -22,10 +22,11 @@ const About: NextPage<WebsiteText> = ({ websiteText }) => {
       <div className="mx-auto flex h-full w-4/5 flex-col items-center justify-center pt-40 pb-28 text-white md:flex-row ">
         <div className="mb-10 w-96">
           <Image
-            unsized
+            width={300}
+            height={150}
             alt="about me"
             src="/images/aboutme.jpeg"
-            // blurDataURL="data:..." automatically provided
+            blurDataURL="KuNcd3WCx,a~jsj@%joMN1"
             placeholder="blur"
           />
         </div>

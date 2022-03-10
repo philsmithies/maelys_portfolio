@@ -9,7 +9,7 @@ module.exports = {
   },
   theme: {
     fontFamily: {
-      syne: ["Syne", "courier"],
+      syne: ["Syne", "Helvetica"],
     },
     border: {
       half: ["0.5px"],

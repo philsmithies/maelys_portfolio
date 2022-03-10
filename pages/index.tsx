@@ -15,13 +15,14 @@ const Index = ({ gallery, websiteText }: PageProps) => {
   return (
     <>
       <div className="flex flex-col">
-        <div className="flex sm:h-4/6 md:h-5/6 w-full relative justify-center">
+        <div className="flex h-screen w-full relative justify-center z-10">
           {/* bg-[url('/images/homepage2.jpg')] */}
           <Image
-            unsized
+            layout="fill"
+            objectFit="cover"
             src="/images/homepage2.jpg"
             alt="Picture of the author"
-            // blurDataURL="data:..." automatically provided
+            blurDataURL="LKR1qu3WtPIo~XV@G[kWyD@@-VtR"
             placeholder="blur"
           />
           <div className="absolute self-end mx-auto">

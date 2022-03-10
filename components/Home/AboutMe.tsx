@@ -28,31 +28,42 @@ const AboutMe = ({ aboutText }): JSX.Element => {
 
   return (
     <div
-      className="mt-20 flex h-auto w-11/12 flex-col items-center justify-center md:flex-row md:px-36 "
+      className="mt-36 flex w-11/12 flex-col items-center justify-center md:flex-row mx-auto "
       ref={ref}
     >
-      <div className="flex h-full max-w-sm flex-col items-center justify-center text-center md:w-3/6">
+      <div className="flex h-full max-w-sm flex-col items-center justify-center text-center md:w-3/6 mx">
         <h1 className="font-syne text-4xl font-semibold">About Me</h1>
         <p className="font-syne px-5 pt-5 text-base">
           The text on home is {aboutText}
         </p>
-        <img
-          src="/icons/rainbowblue.svg"
-          alt="about me"
-          className="absolute -z-10 mt-36 w-40 self-start fill-yellow-100"
-        />
-        <img
-          src="/icons/lightstar.svg"
-          alt="about me"
-          className="absolute -z-10 mt-16 w-20 self-start fill-yellow-100"
-        />
+        <div className="absolute -z-10 sm:w-20 mt-20 md:w-20 self-start fill-yellow-100">
+          <Image
+            layout="responsive"
+            src="/icons/rainbowblue.svg"
+            alt="about me"
+            width={160}
+            height={100}
+            className=""
+          />
+          <Image
+            layout="responsive"
+            src="/icons/lightstar.svg"
+            alt="about me"
+            width={80}
+            height={80}
+            className="absolute -z-10 mt-36 w-40 self-start fill-yellow-100"
+          />
+        </div>
       </div>
-      <div className="ml-5 h-full w-4/6 md:w-96">
+      <div className="relative ml-5 h-96 w-72 mt-8">
         <Image
-          unsized
+          layout="fill"
+          objectFit="cover"
           src="/images/aboutme.jpeg"
-          alt="about me"
+          alt="Picture of the author"
           className="mt-5"
+          blurDataURL="KuNcd3WCx,a~jsj@%joMN1"
+          placeholder="blur"
         />
       </div>
       <div className="absolute -z-10 h-fit w-full">

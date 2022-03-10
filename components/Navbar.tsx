@@ -43,7 +43,7 @@ const Navbar = (): JSX.Element => {
       variants={variants}
       animate={hidden ? "hidden" : "visible"}
       transition={{ ease: [0.1, 0.25, 0.3, 1], duration: 0.6 }}
-      className=" fixed left-0 right-0 z-10 flex flex-col items-center justify-around bg-white drop-shadow-sm md:m-3 md:mx-9 md:flex-row md:rounded-lg"
+      className=" fixed left-0 right-0 z-20 flex flex-col items-center justify-around bg-white drop-shadow-sm md:m-3 md:mx-9 md:flex-row md:rounded-lg"
     >
       <div className="flex w-full items-center justify-between md:w-4/12">
         <Link href="/">

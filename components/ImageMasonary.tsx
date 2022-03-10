@@ -116,7 +116,8 @@ const HomePageGrid = ({ galleryImages: images }): JSX.Element => {
             <div key={key} className="bg-white mx-auto md:mx-0">
               <div className="image-card hover:cursor-pointer hover:opacity-50 focus:outline-none ">
                 <Image
-                  unsized
+                  width={800}
+                  height={800}
                   src={urlFor(image).width(800).url()}
                   onClick={() => showImage(image)}
                   tabIndex={-1}
