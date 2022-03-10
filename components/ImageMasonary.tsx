@@ -4,6 +4,7 @@ import { useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { getClient } from "../utils/sanity";
+import Image from "next/image";
 
 const HomePageGrid = ({ galleryImages: images }): JSX.Element => {
   let gallery = images[0];
@@ -98,11 +99,9 @@ const HomePageGrid = ({ galleryImages: images }): JSX.Element => {
             className="w-20 hover:cursor-pointer"
             onClick={showPrev}
           />
-          <img
-            id="lightbox-img"
-            src={urlFor(imageToShow).width(800).url()}
-            className="h-5/6 transition-all	duration-700 ease-in-out"
-          />
+          <div className="h-5/6 transition-all flex items-center	duration-700 ease-in-out">
+            <img id="lightbox-img" src={urlFor(imageToShow).width(800).url()} />
+          </div>
           <FaArrowRight
             className="w-20 hover:cursor-pointer"
             onClick={showNext}
@@ -114,15 +113,18 @@ const HomePageGrid = ({ galleryImages: images }): JSX.Element => {
       <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
         <Masonry gutter={"5px"}>
           {gallery.images.map((image, key) => (
-            <div key={key} className="bg-white">
-              <img
-                className="image-card hover:cursor-pointer hover:opacity-50 focus:outline-none"
-                onClick={() => showImage(image)}
-                tabIndex={-1}
-                onKeyDown={onKeyDown}
-                src={urlFor(image).width(800).url()}
-                key={key}
-              />
+            <div key={key} className="bg-white mx-auto md:mx-0">
+              <div className="image-card hover:cursor-pointer hover:opacity-50 focus:outline-none ">
+                <Image
+                  width={800}
+                  height={800}
+                  src={urlFor(image).width(800).url()}
+                  onClick={() => showImage(image)}
+                  tabIndex={-1}
+                  key={key}
+                  onKeyDown={onKeyDown}
+                />
+              </div>
             </div>
           ))}
         </Masonry>

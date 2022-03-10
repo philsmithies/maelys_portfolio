@@ -20,11 +20,14 @@ const About: NextPage<WebsiteText> = ({ websiteText }) => {
         <title>About Me</title>
       </Head>
       <div className="mx-auto flex h-full w-4/5 flex-col items-center justify-center pt-40 pb-28 text-white md:flex-row ">
-        <div>
-          <img
-            src="/images/aboutme.jpeg"
+        <div className="mb-10 w-96">
+          <Image
+            width={300}
+            height={150}
             alt="about me"
-            className="mb-10 w-96"
+            src="/images/aboutme.jpeg"
+            blurDataURL="KuNcd3WCx,a~jsj@%joMN1"
+            placeholder="blur"
           />
         </div>
         <div className="flex flex-col md:ml-10 ">
@@ -49,7 +52,7 @@ const About: NextPage<WebsiteText> = ({ websiteText }) => {
   );
 };
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const websiteText = await getClient(true).fetch(groq`
   *[_type == "textContent"][0]
 `);
@@ -58,7 +61,6 @@ export const getStaticProps = async () => {
     props: {
       websiteText,
     },
-    revalidate: 1,
   };
 };
 

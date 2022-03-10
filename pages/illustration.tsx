@@ -18,7 +18,7 @@ const Illustration = ({ gallery, websiteText }: PageProps) => {
   );
 };
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const websiteText = await getClient(true).fetch(groq`
   *[_type == "textContent"][0]
 `);
@@ -32,7 +32,6 @@ export const getStaticProps = async () => {
       gallery,
       websiteText,
     },
-    revalidate: 1,
   };
 };
 
