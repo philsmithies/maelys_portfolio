@@ -24,7 +24,7 @@ export const getServerSideProps = async () => {
 `);
 
   const gallery = await getClient(true).fetch(groq`
-*[_type == "gallery" && title == 'Illustration']
+*[_type == "gallery" && title == 'Illustration'][0]
 `);
 
   return {
