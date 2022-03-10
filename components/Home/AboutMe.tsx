@@ -1,10 +1,13 @@
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
-import Wave from "../Wave";
 import Image from "next/image";
 import useHasBeenViewed from "../../utils/useHasBeenViewed";
 
-const AboutMe = ({ aboutText }): JSX.Element => {
+interface AboutText {
+  aboutText: string;
+}
+
+const AboutMe = ({ aboutText }: AboutText): JSX.Element => {
   // percentage of parent in view before trigger
   const [hasBeenViewed, ref] = useHasBeenViewed();
   const animation = useAnimation();

@@ -11,7 +11,7 @@ import groq from "groq";
 import type { PageProps } from "../types";
 
 const Index = ({ gallery, websiteText }: PageProps) => {
-  const aboutRef = useRef(null);
+  const aboutRef = useRef<HTMLDivElement>(null);
   return (
     <>
       <div className="flex flex-col">
@@ -48,7 +48,7 @@ const Index = ({ gallery, websiteText }: PageProps) => {
 
 export const getServerSideProps = async () => {
   const gallery = await getClient(true).fetch(groq`
-  *[_type == "gallery" && title == 'Home']
+  *[_type == "gallery" && title == 'Home'][0]
 `);
 
   const websiteText = await getClient(true).fetch(groq`

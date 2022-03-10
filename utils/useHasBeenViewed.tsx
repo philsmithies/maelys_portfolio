@@ -3,7 +3,7 @@ import { useRef, useEffect } from "react";
 
 const useHasBeenViewed = () => {
   const [ref, inView] = useInView();
-  const prevInView = useRef(false || null);
+  const prevInView = useRef<HTMLDivElement>(null);
   const hasBeenViewed = prevInView.current || inView;
   useEffect(() => {
     prevInView.current = inView;
