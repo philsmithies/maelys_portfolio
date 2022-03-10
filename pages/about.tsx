@@ -19,33 +19,40 @@ const About: NextPage<WebsiteText> = ({ websiteText }) => {
       <Head>
         <title>About Me</title>
       </Head>
-      <div className="mx-auto flex h-full w-4/5 flex-col items-center justify-center pt-40 pb-28 text-white md:flex-row ">
-        <div className="mb-10 w-96">
+      <div className="mx-auto flex h-screen w-4/5 flex-col items-center justify-center pt-40 pb-28 text-white md:flex-row ">
+        <div className="relative ml-5 h-96 w-72 mt-8 mb-10">
           <Image
-            width={300}
-            height={150}
-            alt="about me"
+            layout="fill"
+            objectFit="cover"
             src="/images/aboutme.jpeg"
+            alt="About Me Profile Photo"
+            className="mt-5"
             blurDataURL="KuNcd3WCx,a~jsj@%joMN1"
             placeholder="blur"
           />
         </div>
         <div className="flex flex-col md:ml-10 ">
-          <img
-            src="/icons/star.svg"
-            alt="about me"
-            className="absolute -z-10 ml-10 w-40 self-end"
-          />
+          <div className="absolute -z-10 ml-10 self-end">
+            <Image
+              src="/icons/star.svg"
+              alt="star icon"
+              width={80}
+              height={80}
+            />
+          </div>
 
           <h1 className="font-syne pb-3 text-center text-4xl font-semibold text-black md:text-left">
             Maelys Cha Cha
           </h1>
           <p className="max-w-sm text-black">{websiteText.aboutPage}</p>
-          <img
-            src="/icons/rainbowblue.svg"
-            alt="about me"
-            className="absolute -z-10 ml-10 w-40 self-start fill-yellow-100"
-          />
+          <div className="absolute -z-10 ml-10 mt-20 self-start">
+            <Image
+              src="/icons/rainbowblue.svg"
+              alt="rainbow icon"
+              width={80}
+              height={80}
+            />
+          </div>
         </div>
       </div>
     </>

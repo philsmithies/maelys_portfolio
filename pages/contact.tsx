@@ -6,8 +6,8 @@ import ContactForm from "../components/ContactForm";
 const Contact = () => {
   return (
     <div
-      className="flex h-full max-w-sm flex-col items-center py-24 sm:mx-auto
-  md:max-w-md lg:max-w-4xl"
+      className="flex h-full flex-col items-center py-24 mx-auto
+        max-w-md md:max-w-lg lg:max-w-4xl"
     >
       <div className="w-5/6">
         <h1 className="font-syne mt-32 mb-10 text-4xl font-bold">Hello ☺</h1>
