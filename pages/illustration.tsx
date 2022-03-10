@@ -12,7 +12,7 @@ const Illustration = ({ gallery, websiteText }: PageProps) => {
         <p className="mt-2 font-medium">{websiteText.illustrationIntro}</p>
       </div>
       <div className="z-0 py-24">
-        <ImageMasonary galleryImages={gallery} />
+        <ImageMasonary gallery={gallery} />
       </div>
     </>
   );

@@ -2,7 +2,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useState } from "react";
 import { FaArrowCircleDown } from "react-icons/fa";
 
-const ScrollButton = ({ reference }): JSX.Element => {
+const ScrollButton = ({ reference }: any): JSX.Element => {
   const [scrollButtonVisible, setScrollButtonVisible] = useState(true);
   const animation = useAnimation();
 

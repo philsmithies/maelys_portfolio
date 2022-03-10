@@ -15,8 +15,9 @@ const Index = ({ gallery, websiteText }: PageProps) => {
   return (
     <>
       <div className="flex flex-col">
-        <div className="flex h-screen w-full relative justify-center z-10">
+        <div className="flex h-screen w-full relative justify-center z-10 bottom-0">
           <Image
+            objectPosition="top"
             layout="fill"
             objectFit="cover"
             src="/images/homepage2.jpg"

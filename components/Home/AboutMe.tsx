@@ -1,5 +1,5 @@
 import { motion, useAnimation } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import useHasBeenViewed from "../../utils/useHasBeenViewed";
 
@@ -13,7 +13,6 @@ const AboutMe = ({ aboutText }: AboutText): JSX.Element => {
   const animation = useAnimation();
 
   useEffect(() => {
-    console.log("in view is ", hasBeenViewed);
     if (hasBeenViewed) {
       animation.start({
         strokeOpacity: 1,

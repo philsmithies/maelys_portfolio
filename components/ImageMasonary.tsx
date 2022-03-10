@@ -1,3 +1,4 @@
+// @ts-ignore
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import imageUrlBuilder from "@sanity/image-url";
 import { useState } from "react";
@@ -7,15 +8,12 @@ import { getClient } from "../utils/sanity";
 import Image from "next/image";
 
 interface GalleryImages {
-  galleryImages: {
-    images: {};
+  gallery: {
+    images: {}[];
   };
 }
 
-const HomePageGrid = ({
-  galleryImages: images,
-}: GalleryImages): JSX.Element => {
-  let gallery = images[0];
+const HomePageGrid = ({ gallery }: GalleryImages): JSX.Element => {
   const [lightboxDisplay, setLightBoxDisplay] = useState(false);
   const [imageToShow, setImageToShow] = useState("");
 
@@ -37,7 +35,7 @@ const HomePageGrid = ({
       setLightBoxDisplay(false);
     } else {
       let nextImage = gallery.images[currentIndex + 1];
-      setImageToShow(nextImage);
+      setImageToShow(nextImage as string);
     }
   };
 
@@ -47,7 +45,7 @@ const HomePageGrid = ({
       setLightBoxDisplay(false);
     } else {
       let nextImage = gallery.images[currentIndex - 1];
-      setImageToShow(nextImage);
+      setImageToShow(nextImage as string);
     }
   };
 
@@ -117,7 +115,7 @@ const HomePageGrid = ({
       )}
       <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
         <Masonry gutter={"5px"}>
-          {gallery.images.map((image: string, key: number) => (
+          {gallery.images.map((image: any, key) => (
             <div key={key} className="bg-white mx-auto md:mx-0">
               <div className="image-card hover:cursor-pointer hover:opacity-50 focus:outline-none ">
                 <Image
