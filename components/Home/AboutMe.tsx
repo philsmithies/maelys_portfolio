@@ -68,7 +68,7 @@ const AboutMe = ({ aboutText }: AboutText): JSX.Element => {
           placeholder="blur"
         />
       </div>
-      <div className="absolute -z-10 h-fit w-full">
+      <div className="invisible absolute -z-10 md:visible h-fit w-full">
         <motion.div className="w-full rotate-90">
           <svg
             viewBox="0 0 1440 363"
