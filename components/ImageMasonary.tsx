@@ -6,6 +6,7 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { getClient } from "../utils/sanity";
 import Image from "next/image";
+import { KeyboardEvent } from "react";
 
 interface GalleryImages {
   gallery: {
@@ -49,12 +50,13 @@ const HomePageGrid = ({ gallery }: GalleryImages): JSX.Element => {
     }
   };
 
-  const onKeyDown = (e: KeyboardEvent) => {
-    if (["ArrowRight", "ArrowLeft"].indexOf(e.key) !== -1) {
-      e.preventDefault();
-      e.stopPropagation();
+  const onKeyDown = (event: KeyboardEvent) => {
+    const { key } = event;
+    if (["ArrowRight", "ArrowLeft"].indexOf(key) !== -1) {
+      event.preventDefault();
+      event.stopPropagation();
     }
-    switch (e.key) {
+    switch (key) {
       case "ArrowLeft":
         showPrev();
         break;
@@ -117,15 +119,14 @@ const HomePageGrid = ({ gallery }: GalleryImages): JSX.Element => {
         <Masonry gutter={"5px"}>
           {gallery.images.map((image: any, key) => (
             <div key={key} className="bg-white mx-auto md:mx-0">
-              <div className="image-card hover:cursor-pointer hover:opacity-50 focus:outline-none ">
-                <Image
-                  width={800}
-                  height={800}
+              <div className="image-card hover:cursor-pointer hover:opacity-50 focus:outline-none">
+                <img
+                  className="cover"
                   src={urlFor(image).width(800).url() as string}
                   onClick={() => showImage(image)}
                   tabIndex={-1}
                   key={key}
-                  onKeyDown={(e) => onKeyDown}
+                  onKeyDown={onKeyDown}
                 />
               </div>
             </div>
