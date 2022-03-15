@@ -122,7 +122,7 @@ const HomePageGrid = ({ gallery }: GalleryImages): JSX.Element => {
               <div className="image-card hover:cursor-pointer hover:opacity-50 focus:outline-none">
                 <img
                   className="cover"
-                  src={urlFor(image).width(800).url() as string}
+                  src={urlFor(image).width(1248).url() as string}
                   onClick={() => showImage(image)}
                   tabIndex={-1}
                   key={key}
