@@ -35,24 +35,22 @@ const AboutMe = ({ aboutText }: AboutText): JSX.Element => {
     >
       <div className="flex h-full max-w-sm flex-col items-center justify-center text-center md:w-3/6 mx">
         <h1 className="font-syne text-4xl font-semibold">About Me</h1>
-        <p className="font-syne px-5 pt-5 text-base">
-          The text on home is {aboutText}
-        </p>
-        <div className="absolute -z-10 sm:w-20 mt-20 md:w-20 self-start fill-yellow-100">
+        <p className="font-syne px-5 pt-5 text-base">{aboutText}</p>
+        <div className="absolute -z-10 w-10 mt-20 md:mt-44 self-start fill-yellow-100">
           <Image
             layout="responsive"
             src="/icons/rainbowblue.svg"
             alt="about me"
-            width={160}
-            height={100}
+            width={120}
+            height={75}
             className=""
           />
           <Image
             layout="responsive"
             src="/icons/lightstar.svg"
             alt="about me"
-            width={80}
-            height={80}
+            width={60}
+            height={60}
             className="absolute -z-10 mt-36 w-40 self-start fill-yellow-100"
           />
         </div>
