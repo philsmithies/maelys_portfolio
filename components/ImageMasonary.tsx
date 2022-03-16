@@ -119,7 +119,7 @@ const HomePageGrid = ({ gallery }: GalleryImages): JSX.Element => {
         <Masonry gutter={"5px"}>
           {gallery.images.map((image: any, key) => (
             <div key={key} className="bg-white mx-auto md:mx-0">
-              <div className="image-card hover:cursor-pointer hover:opacity-50 focus:outline-none">
+              <div className="image-card hover:cursor-pointer hover:opacity-80 focus:outline-none">
                 <img
                   className="cover"
                   src={urlFor(image).width(1248).url() as string}
