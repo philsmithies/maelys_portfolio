@@ -32,9 +32,9 @@ const GetInTouch = (): JSX.Element => {
         src="/icons/lightstar.svg"
         alt="about me"
         animate={animation}
-        className="absolute -z-20 mt-32 w-20 self-start fill-yellow-100 md:mt-40 "
+        className="absolute -z-20 mt-32 w-12 self-start fill-yellow-100 md:mt-40 "
       />
-      <h1 className="font-syne pt-5 text-4xl font-semibold">Get in Touch</h1>
+      <h1 className="font-syne pt-5 text-4xl font-semibold">Get in touch</h1>
       <div className="mb-20">
         <a
           href="mailto:maelyschay@gmail.com"

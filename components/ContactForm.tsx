@@ -82,7 +82,7 @@ const ContactForm = (): JSX.Element => {
       </div>
       <div className="flex items-center justify-center md:justify-end">
         <button
-          className="w-full md:w-28 rounded-sm border border-orange-200 py-3 px-4 text-xs font-thin text-orange-400 shadow transition-colors hover:bg-orange-400 hover:text-white "
+          className="w-full md:w-28 rounded-sm border border-orange-200 py-3 px-4 text-sm font-light text-orange-400 shadow transition-colors hover:bg-orange-400 hover:text-white "
           type="button"
           onClick={() => handleSubmit}
         >

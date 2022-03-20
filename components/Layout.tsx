@@ -10,7 +10,7 @@ const Layout = ({ children }: LayoutProps): JSX.Element => {
   return (
     <>
       <Head>
-        <title>Maëlys Cha: Illustrator</title>
+        <title>Maëlys Chay: Illustration</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Navbar />

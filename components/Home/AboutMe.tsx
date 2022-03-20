@@ -19,7 +19,7 @@ const AboutMe = ({ aboutText }: AboutText): JSX.Element => {
         pathLength: 1,
         pathOffset: 0,
         transition: {
-          duration: 3,
+          duration: 5,
           ease: "easeOut",
         },
       });
@@ -30,29 +30,32 @@ const AboutMe = ({ aboutText }: AboutText): JSX.Element => {
 
   return (
     <div
-      className="mt-36 flex w-11/12 flex-col items-center justify-center md:flex-row mx-auto "
+      className="mt-36 flex w-11/12 flex-col items-center md:flex-row mx-auto "
       ref={ref}
     >
-      <div className="flex h-full max-w-sm flex-col items-center justify-center text-center md:w-3/6 mx">
+      <div className="absolute -z-10 w-10 mt-20 self-start md:mt-10 ml-4">
+        <Image
+          layout="responsive"
+          src="/icons/lightstar.svg"
+          alt="about me"
+          width={60}
+          height={60}
+        />
+      </div>
+      <div className="flex h-full max-w-sm flex-col items-center justify-center text-center md:w-3/6">
         <h1 className="font-syne text-4xl font-semibold">About Me</h1>
-        <p className="font-syne px-5 pt-5 text-base">{aboutText}</p>
-        <div className="absolute -z-10 w-10 mt-20 md:mt-44 self-start fill-yellow-100">
-          <Image
-            layout="responsive"
-            src="/icons/rainbowblue.svg"
-            alt="about me"
-            width={120}
-            height={75}
-            className=""
-          />
-          <Image
-            layout="responsive"
-            src="/icons/lightstar.svg"
-            alt="about me"
-            width={60}
-            height={60}
-            className="absolute -z-10 mt-36 w-40 self-start fill-yellow-100"
-          />
+        <div className="font-syne px-5 pt-5 text-lg ">
+          <p>Bonjour! My name is Maëlys Chay.</p>
+          <p>
+            I am a French Freelance Illustrator, travel and film photography
+            enthusiast based in Paris & in the south of France.
+          </p>
+          <br />
+          <p>
+            My work centers around colourful illustrations, often featuring in
+            one way or another nature, womanhood, still life and a punchy touch.
+            ☺
+          </p>
         </div>
       </div>
       <div className="relative ml-5 h-96 w-72 mt-8">
@@ -66,8 +69,8 @@ const AboutMe = ({ aboutText }: AboutText): JSX.Element => {
           placeholder="blur"
         />
       </div>
-      <div className="invisible absolute -z-10 md:visible h-fit w-full">
-        <motion.div className="w-full rotate-90">
+      <div className="invisible absolute -z-10 md:visible h-fit w-full mx-auto -translate-x-80">
+        <motion.div className="w-full scale-x-100" style={{ rotate: 85 }}>
           <svg
             viewBox="0 0 1440 363"
             fill="none"

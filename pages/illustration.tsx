@@ -8,8 +8,9 @@ const Illustration = ({ gallery, websiteText }: PageProps) => {
   return (
     <>
       <div className="mx-auto flex max-w-3xl flex-col pt-24 text-center">
-        <h1 className="font-syne mt-28 text-4xl">Illustration 🌱 </h1>
-        <p className="mt-2 font-medium">{websiteText.illustrationIntro}</p>
+        <p className="mt-28 font-medium text-lg">
+          {websiteText.illustrationIntro}
+        </p>
       </div>
       <div className="z-0 py-24">
         <ImageMasonary gallery={gallery} />
