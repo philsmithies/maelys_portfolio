@@ -7,7 +7,8 @@ const ContactForm = (): JSX.Element => {
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSubmit = (e: any) => {
+    console.log("clicked");
     e.preventDefault();
     let data = {
       name,
@@ -35,6 +36,7 @@ const ContactForm = (): JSX.Element => {
         }
       })
       .catch(function (error) {
+        console.log("erros!");
         console.log(error);
       });
   };
@@ -84,7 +86,7 @@ const ContactForm = (): JSX.Element => {
         <button
           className="w-full md:w-28 rounded-sm border border-orange-200 py-3 px-4 text-sm font-light text-orange-400 shadow transition-colors hover:bg-orange-400 hover:text-white "
           type="button"
-          onClick={() => handleSubmit}
+          onClick={handleSubmit}
         >
           Submit
         </button>

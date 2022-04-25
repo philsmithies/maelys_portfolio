@@ -8,7 +8,6 @@ const GetInTouch = (): JSX.Element => {
   const animation = useAnimation();
 
   useEffect(() => {
-    console.log("in view is ", hasBeenViewed);
     if (hasBeenViewed) {
       animation.start({
         rotate: 260,
