@@ -90,12 +90,12 @@ const ContactForm = (): JSX.Element => {
         >
           Submit
         </button>
-        {submitted && (
-          <div className="mt-2">
-            <p className="font-gray-700">Thankyou!</p>
-          </div>
-        )}
       </div>
+      {submitted && (
+        <div className="mt-4 float-right">
+          <p className="font-gray-700">Thankyou!</p>
+        </div>
+      )}
     </form>
   );
 };
