@@ -36,9 +36,9 @@ const Index = ({ gallery, websiteText }: PageProps) => {
           <MyWork gallery={gallery} />
           <div className="mx-auto flex flex-col items-center justify-center pt-24 lg:max-w-4xl lg:flex-row">
             <GetInTouch />
-            <div className="max-w-xl">
+            {/* <div className="max-w-xl">
               <ContactForm />
-            </div>
+            </div> */}
           </div>
           <ScrollTopButton />
         </div>
